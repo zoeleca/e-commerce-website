@@ -1,11 +1,13 @@
+// importe le module Express
 const express = require('express');
+
+// crée une instance 'app' de Express
 const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Bonjour AdaLove !');
+// exemple de fonction middleware renvoyant un json
+app.use((req, res) => {
+   res.json({ message: 'Votre requête a bien bien été reçue !' }); 
 });
 
-app.listen(port, () => {
-  console.log(`Application exemple écoutant sur le port ${port}`);
-});
+// on exporte l'application Express (encapsulée)
+module.exports = app;
