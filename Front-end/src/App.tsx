@@ -1,38 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
+import axios from 'axios';
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
+  const [user, setUser] = useState<UserData | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Make a GET request to the API endpoint
+        const response = await axios.get<UserData>('https://pokeapi.co/api/v2/pokemon/ditto');
+        
+        // Update the state with the fetched user data
+        setUser(response.data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      } finally {
+        // Set loading to false after the request completes (whether successful or not)
+        setLoading(false);
+      }
+    };
+
+    // Call the fetchData function when the component mounts
+    fetchData();
+  }, []); // Empty dependency array means this effect runs once when the component mounts
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className="text-3xl font-bold underline">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="text-sm sm:text-lg bg-red-400 sm:bg-yellow-400e">
-        Click on the Vite and React logos to learn more
-      </p>
-      <span className="text-3xl font-bold ">
-        Hello world!
-      </span>
-    </>
-  )
-}
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : user ? (
+        <div>
+          <h1>User Information</h1>
+          <p>ID: {user.id}</p>
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
+        </div>
+      ) : (
+        <p>No user data available</p>
+      )}
+    </div>
+  );
+};
 
 export default App
