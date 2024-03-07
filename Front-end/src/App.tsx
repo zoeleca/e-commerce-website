@@ -1,50 +1,47 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios';
+import Layout from "./pages/Layout";
+import Product from "./pages/Product";
+import BackOffice from "./pages/BackOffice.jsx";
 
-import './App.css'
+
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+
+
+
 
 function App() {
-
-
-  const [user, setUser] = useState<UserData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Make a GET request to the API endpoint
-        const response = await axios.get<UserData>('https://pokeapi.co/api/v2/pokemon/ditto');
-        
-        // Update the state with the fetched user data
-        setUser(response.data);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      } finally {
-        // Set loading to false after the request completes (whether successful or not)
-        setLoading(false);
-      }
-    };
-
-    // Call the fetchData function when the component mounts
-    fetchData();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
-
   return (
-    <div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : user ? (
-        <div>
-          <h1>User Information</h1>
-          <p>ID: {user.id}</p>
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
-        </div>
-      ) : (
-        <p>No user data available</p>
-      )}
-    </div>
+    <>
+<ScrollToTop />
+      <Routes>
+        Route vers "l'interface", seule la navbar est chargée
+        <Route path="/" element={<Layout />}>
+          {/* Routes vers le contenu */}
+          <Route path="/" element={<HomePage />} />
+          {/* Route dynamique vers un résultat de recherche, pour l'instant il faut le nom complet du produit */}
+          <Route path="shop" element={<Shop />} />
+          {/* Route dynamique vers un résultat de recherche, pour l'instant il faut le nom complet du produit */}
+          <Route path="shop/search/:query" element={<Shop />} />
+          {/* Route dynamique vers tous les items d'une catégorie*/}
+          <Route path="shop/itemscateg/:query" element={<Shop />} />
+          {/* Route dynamique vers chaque page produit selon l'id */}
+          <Route path=":productId" element={<Product />} />
+          {/* Route dynamique vers la page de contact */}
+          <Route path="contact" element={<ContactForm />} />
+          {/* route vers le back office avec un "tampon" protectedroute qui vérifie les données de session*/}
+          <Route
+            path="back-office"
+            element={
+              <ProtectedRoute>
+                <BackOffice />
+              </ProtectedRoute>
+            }
+          />
+          {/* route vers la page de login */}
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>    </>
   );
-};
+}
 
-export default App
+export default App;
