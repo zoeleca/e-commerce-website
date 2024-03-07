@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { newProduct } = require("./Back-end/dbQueries");
+const { newProduct } = require("../dbQueries");
 
 router.get("/products", async (req, res) => {
   try {
