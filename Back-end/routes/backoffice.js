@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { boQuery } = require("./Back-end/dbQueries.js");
+const { boQuery } = require("../dbQueries.js");
 
 router.get("/", function(req, res, next) {
   console.log("Backoffice Router Working");
