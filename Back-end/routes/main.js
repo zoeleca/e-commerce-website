@@ -6,7 +6,6 @@ const { getProduct } = require("./Back-end/dbQueries");
 
 router.get("/", function(req, res, next) {
   console.log("Router Working");
-  res.sendFile("/test.html");
 });
   
 router.get("/", async (req, res) => {
@@ -19,3 +18,5 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+module.exports = router;
