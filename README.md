@@ -1,16 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2A64UvPD)
-
-
 # Ada Love Chaise (school project)
 Le projet consiste, pour deux équipes back-end et front-end, à créer une plateforme de vente de meubles d'occasion.
 
 ## Bien démarrer
 
-Ces instructions vous permettront d'obtenir une copie du projet en fonctionnement sur votre machine locale pour le développement et les tests. Consultez la section déploiement pour des notes sur comment déployer le projet sur un système en production.
+Ces instructions vous permettront d'obtenir une copie du projet en fonctionnement sur votre machine locale pour le développement et les tests. 
+
+Consultez la section déploiement pour des notes sur comment déployer le projet sur un système en production.
 
 ### Pré-requis
 
-Les choses dont vous avez besoin pour installer le logiciel et comment les installer :
+Ce dont vous avez besoin pour installer le logiciel :
 
 - un IDE
 - un shell
@@ -38,6 +37,29 @@ Le point d'entrée est server.js, ce qui donne dans le fichier package.json : `"
 
 
 #### - DataBase
+
+- Installer PostgreSQL
+- Installer pgAdmin4 (minimum)
+- Suivre les instructions contenues dans le script : `tables_db_lovechaise.sql`
+
+```
+/* POUR UTILISER CE SCRIPT .SQL :
+1) Télécharger PostgreSQL (au moins pgAdmin 4) 
+2) Executer le fichier d'installation et enregistrer le mot de passe "postgres" pour l'user par default "postgres"
+2) Ouvrir pgAdmin
+3) Ouvrir le dossier "Server"
+4) Insérer le mot de passe "postgres" dans le prompt
+5) Click droit sur "Database" > Create > Database
+6) Nommer la db "Lovechaise"
+7) Cliquer droit sur la DB Lovechaise
+8) Click "Query Tool"
+9) Click sur le bouton "Dossier" 
+10) Importer le fichier tables_db_lovechaise.sql
+11) Click sur le bouton "Play Execute Script"
+12) Si besoin de tester des queries : refaire l'étape 8 
+*/
+
+```
 
 
 
