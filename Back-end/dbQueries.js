@@ -1,10 +1,23 @@
 // dbQueries.js
 
 const executeQuery = require("./modules/dbConfig.js");
-const products =
+const detailProducts =
   "SELECT product_name, price, product_description FROM products ORDER BY price ASC";
+const products =   "SELECT * FROM products";
+
 
 async function getProduct() {
+  try {
+    const Products = await executeQuery(detailProducts);
+    console.log(Products);
+    return Products
+  } catch (err) {
+    console.log("executeQuery failed");
+    throw err;
+  }
+}
+
+async function boQuery() {
   try {
     const allProducts = await executeQuery(products);
     console.log(allProducts);
@@ -15,20 +28,9 @@ async function getProduct() {
   }
 }
 
-async function getProduct() {
-  try {
-    const allProducts = await executeQuery(products);
-    console.log(allProducts);
-  } catch (err) {
-    console.log("executeQuery failed");
-    throw err;
-  }
-}
-
 getProduct();
 
 module.exports = {
   getProduct,
-  newProduct,
-  searchProduct
+  boQuery,
 };
