@@ -5,8 +5,8 @@ const { Client } = require('pg');
 const client = new Client({
     user: 'postgres',
     host: 'localhost',
-    database: 'postgres',
-    password: 'pw',
+    database: 'Lovechaise',
+    password: 'tralala',
     port: 5432,
     connectionTimeoutMillis: 5000,
     idleTimeoutMillis: 3000
@@ -30,6 +30,7 @@ const executeQuery = async (querySQL) => {
     try {
         const connectedCLient = await connectClient();
         const result = await connectedCLient.query(querySQL);
+        // console.log(result)
         return result.rows;
     }catch (err){
         console.log('Error executing query:', err.stack);
