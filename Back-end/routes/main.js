@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { getProduct } = require("./Back-end/dbQueries");
+const { getProduct } = require("./Back-end/dbQueries.js");
 
 router.get("/", function(req, res, next) {
   console.log("Router Working");
