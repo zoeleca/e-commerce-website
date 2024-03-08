@@ -1,9 +1,11 @@
+// server.js
+
 // création d'un serveur http qui répond à toutes les requêtes et écoute le port
 
 // importe le module http de Node
 const http = require('http');
 
-// importe app.js
+// importe l'application Express depuis app.js
 const app = require('./app');
 
 // on indique le port sur lequel express doit tourner

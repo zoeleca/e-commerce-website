@@ -1,39 +1,70 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2A64UvPD)
+# Ada Love Chaise (school project)
+Le projet consiste, pour deux équipes back-end et front-end, à créer une plateforme de vente de meubles d'occasion.
+
+## Bien démarrer
+
+Ces instructions vous permettront d'obtenir une copie du projet en fonctionnement sur votre machine locale pour le développement et les tests. 
+
+Consultez la section déploiement pour des notes sur comment déployer le projet sur un système en production.
+
+### Pré-requis
+
+Ce dont vous avez besoin pour installer le logiciel :
+
+- un IDE
+- un shell
+- un navigateur
+- Node.js
+- npm
+
+### Installation
+
+Ce qui est entre pararenthèses est normalement déjà en place.
+
+#### - Back end
+
+Se placer dans le dossier `/Back-end` :
+
+- Installer les dépendances de Node : `npm install`
+
+(Installer express : `npm install express --save`)
+
+- Lancer `npm run start` (toujours garder un terminal ouvert)
+- Lancer le serveur : `nodemon server`
+- Vérifier que l'objet {message} est bien affiché : [http://localhost:3000/](http://localhost:3000/) 
+
+Le point d'entrée est server.js, ce qui donne dans le fichier package.json : `"main": "server.js",`
 
 
-# Project Title
+#### - DataBase
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+- Installer PostgreSQL
+- Installer pgAdmin4 (minimum)
+- Suivre les instructions contenues dans le script : `tables_db_lovechaise.sql`
 
 ```
-Give examples
+/* POUR UTILISER CE SCRIPT .SQL :
+1) Télécharger PostgreSQL (au moins pgAdmin 4) 
+2) Executer le fichier d'installation et enregistrer le mot de passe "postgres" pour l'user par default "postgres"
+2) Ouvrir pgAdmin
+3) Ouvrir le dossier "Server"
+4) Insérer le mot de passe "postgres" dans le prompt
+5) Click droit sur "Database" > Create > Database
+6) Nommer la db "Lovechaise"
+7) Cliquer droit sur la DB Lovechaise
+8) Click "Query Tool"
+9) Click sur le bouton "Dossier" 
+10) Importer le fichier tables_db_lovechaise.sql
+11) Click sur le bouton "Play Execute Script"
+12) Si besoin de tester des queries : refaire l'étape 8 
+*/
+
 ```
 
-### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+#### - Front end
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -59,25 +90,26 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+## Conçu avec
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](https://react.dev/) 
+* [Express](https://expressjs.com/) pour Node.js
+* [PostgreSQL](https://www.postgresql.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
+## Repository
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+[Ada tech School GitHub](https://github.com/adatechschool/projet-plateforme-de-vente-de-meubles-adalovechaises)
 
-## Authors
+## Auteur·es
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Morgane Le Moal** - [GitHub](https://github.com/M0nline) - [LinkedIn](https://www.linkedin.com/in/morganelemoal/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 
 ## License
 
