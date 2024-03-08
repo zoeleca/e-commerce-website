@@ -5,7 +5,7 @@ import Sidebar from './components/sidedbar';
 
 
 
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 
 
