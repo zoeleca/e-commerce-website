@@ -1,17 +1,18 @@
 // importe le module Express
-const express = require('express');
-// importe la route de la page d'accueil
-const mainPage = require('./routes/main');
-
+const express = require("express");
 // crée une instance 'app' de Express
 const app = express();
+const cors = require("cors");
 
-// exemple de fonction middleware renvoyant un json
-app.use((req, res) => {
-   res.json({ message: 'Votre requête a bien bien été reçue !' }); 
+// Ici : autorise toutes les origines de requête
+app.use(cors());
+
+// importe la route de la page d'accueil
+const mainPage = require("./routes/main");
+
+app.use("/", mainPage);
+
+// le serveur écoute les connexions entrantes sur le port spécifié dans les var d'env (ou sur 3000)
+app.listen(3000, () => {
+  console.log(`Server is running on http://localhost:3000`);
 });
-
-app.use('/routes', mainPage);
-
-// on exporte l'application Express (encapsulée)
-module.exports = app;
