@@ -1,7 +1,5 @@
 //backoffice.js
 
-// backoffice.js
-
 const express = require("express");
 const router = express.Router();
 const { boQuery } = require("../dbQueries.js");
