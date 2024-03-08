@@ -32,11 +32,12 @@ const executeQuery = async (querySQL) => {
   } catch (err) {
     console.log("Error executing query:", err.stack);
     throw err;
-  } finally {
-    if (client) {
-      client.release();
-    }
   }
+  // finally {
+  //   if (client) {
+  //     client.release();
+  //   }
+  // }
 };
 
 // Exportation de la fonction 'executeQuery'
