@@ -4,7 +4,7 @@ import { PersonIcon } from '@radix-ui/react-icons'
 import LoginForm from './LoginForm';
 
 import './style.css';
-
+// ij
 {/*fonction pour le Header*/ }
 const Header = () => (
   // div qui correspond a au bouton incription
