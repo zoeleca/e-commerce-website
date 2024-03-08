@@ -1,21 +1,15 @@
-import HomePage from "./pages/HomePage";
-import BackOffice from "./pages/BackOffice";
 import Layout from "./pages/Layout";
-import Login from "./pages/Login";
 import Product from "./pages/Product";
 import Footer from './components/footer';
 import Sidebar from './components/sidedbar'; 
 
 
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 
-// @TODO: 
-// une route 
-// les routes privées pour les comptes utilisateurs et le BackOffice
-// Si pas le temps utilisteur, mettre .components/login pour protéger l'accès de BackOffice en route publique
-//
+
 
 function App() {
   return (

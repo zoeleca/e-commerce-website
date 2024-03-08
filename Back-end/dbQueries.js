@@ -1,39 +1,38 @@
 // dbQueries.js
 
+// Importe la fonction executant les requêtes SQL
 const executeQuery = require("./modules/dbConfig.js");
-const detailProducts =
-  "SELECT product_name, price, product_description FROM products ORDER BY price ASC ";
-const products = "SELECT * FROM products";
 
-//query de la page d'accueil
+// Requêtes SQL :
+const detailProducts =
+  "SELECT product_name, price, product_description, id FROM products ORDER BY price ASC";
+const allProducts = "SELECT * FROM products";
 
 async function getProduct() {
   try {
-    const products = await executeQuery(detailProducts);
-    console.log(products);
-    return products;
+    const allProductsInfo = await executeQuery(allProducts);
+    // console.log("Products inside the query :", allProductsInfo);
+    return allProductsInfo;
   } catch (err) {
-    console.log("executeQuery failed");
+    console.log("executeQuery failed inside getProduct");
     throw err;
   }
 }
 
-//query de l'espace backoffice
-
+// Query temporaire de la table "products" pour simuler un fetch depuis la page backoffice.
+// A terme, il faudra query la table "stock".
 async function boQuery() {
   try {
-    const allProducts = await executeQuery(products);
-    console.log(allProducts);
-    return allProducts;
+    const stock = await executeQuery(allProducts);
+    console.log("stock :", stock);
+    return stock;
   } catch (err) {
-    console.log("executeQuery failed");
+    console.log("executeQuery failed inside boQuery");
     throw err;
   }
 }
-
-//export des fonctions queries
 
 module.exports = {
   getProduct,
-  boQuery
+  boQuery,
 };
