@@ -2,12 +2,11 @@
 
 const express = require("express");
 const router = express.Router();
-const { getProduct } = require("./Back-end/dbQueries");
+const { getProduct } = require("../dbQueries.js");
 
-router.get("/", function(req, res, next) {
-  console.log("Router Working");
-  res.sendFile("/test.html");
-});
+// router.get("/", function(req, res, next) {
+//   console.log("Main Router Working");
+// });
   
 router.get("/", async (req, res) => {
   try {
@@ -19,3 +18,5 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+module.exports = router;

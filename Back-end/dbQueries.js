@@ -1,43 +1,39 @@
 // dbQueries.js
 
+const executeQuery = require("./modules/dbConfig.js");
+const detailProducts =
+  "SELECT product_name, price, product_description FROM products ORDER BY price ASC ";
+const products = "SELECT * FROM products";
 
-const db = require("./modules/dbConfig.js");
+//query de la page d'accueil
 
 async function getProduct() {
-  return new Promise((resolve, reject) => {
-    db.query(
-      "SELECT product_name, price, product_description" +
-        "FROM products" +
-        "ORDER BY price ASC",
-      (error, results) => {
-        if (error) {
-          reject(error);
-          return;
-        }
-        resolve(results.rows);
-      }
-    );
-  });
+  try {
+    const products = await executeQuery(detailProducts);
+    console.log(products);
+    return products;
+  } catch (err) {
+    console.log("executeQuery failed");
+    throw err;
+  }
 }
 
-async function newProduct(product_name, price, product_description) {
-  return new Promise((resolve, reject) => {
-    const sql =
-      "INSERT INTO products (product_name, price, product_description) VALUES ($1, $2, $3)";
-    const values = [product_name, price, product_description];
+//query de l'espace backoffice
 
-    db
-      .query(sql, values)
-      .then(results => {
-        resolve(results.rows);
-      })
-      .catch(error => {
-        reject(error);
-      });
-  });
+async function boQuery() {
+  try {
+    const allProducts = await executeQuery(products);
+    console.log(allProducts);
+    return allProducts;
+  } catch (err) {
+    console.log("executeQuery failed");
+    throw err;
+  }
 }
+
+//export des fonctions queries
 
 module.exports = {
   getProduct,
-  newProduct
+  boQuery
 };
