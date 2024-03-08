@@ -7,7 +7,7 @@ const { getProduct } = require("../dbQueries.js");
 // router.get("/", function(req, res, next) {
 //   console.log("Main Router Working");
 // });
-  
+
 router.get("/", async (req, res) => {
   try {
     const products = await getProduct();
@@ -17,6 +17,5 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-
 
 module.exports = router;

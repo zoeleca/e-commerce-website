@@ -1,43 +1,43 @@
 //Importation du module 'pg'
-const { Client } = require('pg');
+const { Client } = require("pg");
 
 //Creation d'une instance du client PostgreSQL
 const client = new Client({
-    user: 'morganelemoal',
-    host: 'localhost',
-    database: 'Lovechaise',
-    password: 'postgres',
-    port: 5432,
-    connectionTimeoutMillis: 5000,
-    idleTimeoutMillis: 3000
+  user: "postgres",
+  host: "localhost",
+  database: "Lovechaise",
+  password: "hello",
+  port: 5432,
+  connectionTimeoutMillis: 5000,
+  idleTimeoutMillis: 3000,
 });
 
-
-//Connection à la DB
-const connectClient = async () =>{
-    try {
-        await client.connect();
-        console.log('Connected to database'); 
-        return client;
-    }catch (err) {
-        console.error('Could not connect to database:', err.stack);
-        throw err;
-    }
-}
+// Connect to the database once
+client
+  .connect()
+  .then(() => {
+    console.log("Connected to database");
+  })
+  .catch((err) => {
+    console.error("Could not connect to database:", err.stack);
+    process.exit(1); // Exit the process if connection fails
+  });
 
 //Execution de requêtes SQL
 const executeQuery = async (querySQL) => {
-    try {
-        const connectedCLient = await connectClient();
-        const result = await connectedCLient.query(querySQL);
-        return result.rows;
-    }catch (err){
-        console.log('Error executing query:', err.stack);
-        throw err;
-    }finally{
-        await client.end();
+  try {
+    const result = await client.query(querySQL);
+    // console.log(result)
+    return result.rows;
+  } catch (err) {
+    console.log("Error executing query:", err.stack);
+    throw err;
+  } finally {
+    if (client) {
+      client.release();
     }
-}
+  }
+};
 
 // Exportation de la fonction 'executeQuery'
 module.exports = executeQuery;
