@@ -1,7 +1,8 @@
-import Layout from "./pages/Layout";
-import Product from "./pages/Product";
+//import Layout from './pages/Layout';
+//import Product from './pages/Product';
 import Footer from './components/footer';
 import Sidebar from './components/sidedbar'; 
+import Login from './components/LoginForm'
 
 
 
@@ -17,9 +18,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage/>} />
-          <Route path="/product" element={<Product />}/>
-          <Route path="/login" element={<Login title={"Connection"} />}/>
-          <Route path="/layout" element={<Layout title={"titre"}/>}/>
+          {/*<Route path="/product" element={<Product />}/>*/}
+          <Route path="/login" element={<Login/>}/>
+          {/*<Route path="/layout" element={<Layout title={"titre"}/>}/>*/}
           {/* <Route path="/BackOffice" element={<BackOffice title={"titre"}/>}/> */}
           </Routes>
       </Router>
