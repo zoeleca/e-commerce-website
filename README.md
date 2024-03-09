@@ -37,19 +37,19 @@ Se placer dans le dossier `/Back-end` :
 
 ```
 POUR UTILISER CE SCRIPT .SQL :
-1) Télécharger PostgreSQL (au moins pgAdmin 4) 
-2) Executer le fichier d'installation et enregistrer le mot de passe "postgres" pour l'user par default "postgres"
-2) Ouvrir pgAdmin
-3) Ouvrir le dossier "Server"
-4) Insérer le mot de passe "postgres" dans le prompt
-5) Click droit sur "Database" > Create > Database
-6) Nommer la db "Lovechaise"
-7) Cliquer droit sur la DB Lovechaise
-8) Click "Query Tool"
-9) Click sur le bouton "Dossier" 
-10) Importer le fichier tables_db_lovechaise.sql
-11) Click sur le bouton "Play Execute Script"
-12) Si besoin de tester des queries : refaire l'étape 8 
+1. Télécharger PostgreSQL (au moins pgAdmin 4)
+2. Executer le fichier d'installation et enregistrer le mot de passe "postgres" pour l'user par default "postgres"
+3. Ouvrir pgAdmin
+4. Ouvrir le dossier "Server"
+5. Insérer le mot de passe "postgres" dans le prompt
+6. Click droit sur "Database" > Create > Database
+7. Nommer la db "Lovechaise"
+8. Cliquer droit sur la DB Lovechaise
+9. Click "Query Tool"
+10. Click sur le bouton "Dossier"
+11. Importer le fichier tables_db_lovechaise.sql
+12. Click sur le bouton "Play Execute Script"
+13. Si besoin de tester des queries : refaire l'étape 8 
 ```
 
 #### - Front end
