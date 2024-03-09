@@ -13,37 +13,30 @@ Ce dont vous avez besoin pour installer le logiciel :
 
 - un IDE
 - un shell
+- Node.js (vérifier qu'il est installé en tapant $`node -v`)
+- npm (verifier qu'il est installé en tapant $`npm -v` )
 - un navigateur
-- Node.js
-- npm
 
-### Installation
 
-Ce qui est entre pararenthèses est normalement déjà en place.
+### Installation / lancement
 
 #### - Back end
 
 Se placer dans le dossier `/Back-end` :
 
-- Installer les dépendances de Node : `npm install`
-
-(Installer express : `npm install express --save`)
-
-- Lancer `npm run start` (toujours garder un terminal ouvert)
-- Lancer le serveur : `nodemon server`
-- Vérifier que l'objet {message} est bien affiché : [http://localhost:3000/](http://localhost:3000/) 
-
-Le point d'entrée est server.js, ce qui donne dans le fichier package.json : `"main": "server.js",`
-
+- Installer/mettre à jour les dépendances de Node : `npm install`
+- Lancer `npm run dev` (si vous êtes en environnement de dev)
+  OU
+- Lancer `npm run start` (si vous êtes en environnement de production)
 
 #### - DataBase
 
-- Installer PostgreSQL
-- Installer pgAdmin4 (minimum)
-- Suivre les instructions contenues dans le script : `tables_db_lovechaise.sql`
+- Installer [PostgreSQL](https://www.postgresql.org/)
+- Installer [pgAdmin4](https://www.pgadmin.org/) (minimum)
+- Suivre les instructions contenues dans le script :   `tables_db_lovechaise.sql`
 
 ```
-/* POUR UTILISER CE SCRIPT .SQL :
+POUR UTILISER CE SCRIPT .SQL :
 1) Télécharger PostgreSQL (au moins pgAdmin 4) 
 2) Executer le fichier d'installation et enregistrer le mot de passe "postgres" pour l'user par default "postgres"
 2) Ouvrir pgAdmin
@@ -57,11 +50,7 @@ Le point d'entrée est server.js, ce qui donne dans le fichier package.json : `"
 10) Importer le fichier tables_db_lovechaise.sql
 11) Click sur le bouton "Play Execute Script"
 12) Si besoin de tester des queries : refaire l'étape 8 
-*/
-
 ```
-
-
 
 #### - Front end
 
