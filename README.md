@@ -42,14 +42,14 @@ POUR UTILISER CE SCRIPT .SQL :
 3. Ouvrir pgAdmin
 4. Ouvrir le dossier "Server"
 5. Insérer le mot de passe "postgres" dans le prompt
-6. Click droit sur "Database" > Create > Database
-7. Nommer la db "Lovechaise"
+6. Cliquer droit sur "Database" > Create > Database
+7. Nommer la db "Lovechaise" + save
 8. Cliquer droit sur la DB Lovechaise
-9. Click "Query Tool"
-10. Click sur le bouton "Dossier"
-11. Importer le fichier tables_db_lovechaise.sql
-12. Click sur le bouton "Play Execute Script"
-13. Si besoin de tester des queries : refaire l'étape 8 
+9. Cliquer sur "Query Tool"
+10. Cliquer sur le bouton "open file" (icône "dossier")
+11. Sélectionner et importer le fichier tables_db_lovechaise.sql
+12. Cliquer sur le bouton "Execute Script" (icône "play")
+13. Si besoin de tester des queries : repartir de l'étape 8 
 ```
 
 #### - Front end
