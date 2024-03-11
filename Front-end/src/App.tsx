@@ -1,16 +1,18 @@
 //import Layout from './pages/Layout';
 //import Product from './pages/Product';
-import Footer from './components/footer';
-import Sidebar from './components/sidedbar'; 
-import Login from './components/LoginForm'
 
+import BackOffice from './pages/BackOffice';
+import HomePage from "./pages/HomePage";
+import Login from './pages/Login';
+import Post from './pages/Post';
+import ProductDetails from './pages/ProductDetails';
+import Profile from './pages/Profile';
+
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-
-
-
 
 function App() {
   return (
@@ -18,14 +20,16 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage/>} />
-          {/*<Route path="/product" element={<Product />}/>*/}
+          <Route path="/products" element={<ProductDetails />}/>
           <Route path="/login" element={<Login/>}/>
-          {/*<Route path="/layout" element={<Layout title={"titre"}/>}/>*/}
-          {/* <Route path="/BackOffice" element={<BackOffice title={"titre"}/>}/> */}
+          <Route path="/post" element={<Post/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/backoffice" element={<BackOffice/>}/>
+
           </Routes>
       </Router>
+      <Header/>
       <Footer/>
-      <Sidebar/>
     </>
   );
 }
