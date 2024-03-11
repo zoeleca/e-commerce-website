@@ -1,7 +1,7 @@
 import React from "react";
-import Gallery from './components/Gallery';
-import Card from './components/Card';
-import ProductsList from './components/ProductsList';
+import Gallery from '../components/Gallery';
+import Card from '../components/Card';
+import ProductsList from '../components/ProductsList';
 
 
 const ProductDetail = () => {
@@ -11,7 +11,6 @@ const ProductDetail = () => {
     <Gallery/>
     <Card/>
     <ProductsList/>
-    </>  
     
     </>
   )
