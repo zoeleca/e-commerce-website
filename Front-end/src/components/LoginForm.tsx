@@ -32,7 +32,7 @@ const LoginForm: React.FC = () => {
   return (
   
     <form onSubmit={handleSaveValue}>
-        
+        <h3>Login</h3>
       <h5>Email</h5>
       <input type="text" value={email} onChange={handleEmailChange} />
       {!isValidEmail && <p style={{ color: 'red' }}>L'e-mail n'est pas valide.</p>}
@@ -41,6 +41,7 @@ const LoginForm: React.FC = () => {
       <button type="submit">
         Enregistrement
       </button>
+      
 
       {/* Afficher les valeurs enregistrées  */}
       <ul>
