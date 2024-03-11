@@ -3,10 +3,10 @@ const { Client } = require("pg");
 
 //Creation d'une instance du client PostgreSQL
 const client = new Client({
-  user: "postgres",
+  user: "morganelemoal",
   host: "localhost",
   database: "Lovechaise",
-  password: "hello",
+  password: "postgres",
   port: 5432,
   connectionTimeoutMillis: 5000,
   idleTimeoutMillis: 3000,
