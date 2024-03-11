@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
 
-    console.log("helloWorld")
+    console.log("This is Header components")
     return (
         <>
         <h1>Hello</h1>

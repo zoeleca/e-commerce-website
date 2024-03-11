@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
 
-    console.log("helloWorld")
+    console.log("This is Footer components")
     return (
         <>
         <h1>Hello</h1>

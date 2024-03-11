@@ -5,6 +5,7 @@ import ProductsList from '../components/ProductsList';
 
 
 const ProductDetail = () => {
+  console.log("This is ProductDetail components")
   
   return (<>
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const Sidebar: React.FC = () => {
+
+  console.log("This is Sidebar components")
   // États pour suivre l'état d'ouverture des menus déroulants
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);

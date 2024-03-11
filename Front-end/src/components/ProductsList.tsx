@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductList = () => {
 
-    console.log("helloWorld")
+    console.log("This is ProductsList components")
     return (
         <>
         <h1>Hello</h1>

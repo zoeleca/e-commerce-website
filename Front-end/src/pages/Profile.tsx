@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = () => {
 
-    console.log("helloWorld")
+    console.log("This is Profile components")
 
     return (
         <>
