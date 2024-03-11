@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Intro = () => {
 
     console.log("helloWorld")
     return (
@@ -10,4 +10,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Intro

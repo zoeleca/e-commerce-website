@@ -1,8 +1,8 @@
 import React from "react";
 
-const Header = () => {
+const Login = () => {
 
-    console.log("helloWorld")
+    console.log("helloWorld");
     return (
         <>
         <h1>Hello</h1>
@@ -10,4 +10,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Login

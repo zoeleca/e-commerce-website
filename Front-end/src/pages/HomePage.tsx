@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../components/SideBar';
-import Presentation from '../components/Presentation';
+import Presentation from '../components/Intro';
 import ProductsList from '../components/ProductsList';
 
 const HomePage: React.FC = () => {
