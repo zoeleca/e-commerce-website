@@ -5,7 +5,7 @@ const executeQuery = require("./modules/dbConfig.js");
 
 // Requêtes SQL :
 const detailProducts =
-  "SELECT product_name, price, product_description, id FROM products ORDER BY price ASC";
+  "SELECT product_name, price, product_photo, id FROM products ORDER BY price ASC";
 const allProducts = "SELECT * FROM products";
 
 async function getProduct() {

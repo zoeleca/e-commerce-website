@@ -6,7 +6,7 @@ const client = new Client({
   user: "postgres",
   host: "localhost",
   database: "Lovechaise",
-  password: "hello",
+  password: "tralala",
   port: 5432,
   connectionTimeoutMillis: 5000,
   idleTimeoutMillis: 3000,
