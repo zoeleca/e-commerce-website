@@ -3,6 +3,7 @@ import Sidebar from "../components/SideBar";
 import Presentation from "../components/Intro";
 import ProductsList from "../components/ProductsList";
 import axios from "axios";
+import Card from "../components/Card";
 
 const HomePage: React.FC = () => {
   // Fetch all products info :
@@ -27,6 +28,7 @@ const HomePage: React.FC = () => {
           <Sidebar ProductData={data} />
           <Presentation />
           <ProductsList ProductData={data} />
+          <Card productInfo={data[0]}/>
         </>
       )}
     </>
