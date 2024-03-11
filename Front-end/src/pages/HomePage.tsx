@@ -5,15 +5,28 @@ import ProductsList from "../components/ProductsList";
 import axios from "axios";
 import Card from "../components/Card";
 
+interface Product {
+  product_id: number;
+  product_name: string;
+  category_name: string;
+  color_name: string;
+  photo_src: string;
+  material_name: string;
+  price: number;
+  product_description: string;
+  state_name: string;
+}
+
 const HomePage: React.FC = () => {
   // Fetch all products info :
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<Product[]>(); // Initialize and empty array of Products
   useEffect(() => {
     const fetchData = async () => {
       console.log("fetch request running");
       try {
-        const response = await axios.get("http://localhost:3000");
-        setData(response.data);
+        const response = await axios.get("http://localhost:3000"); // Specify the response type as Product[]
+        setData(response.data); // TS will infer the type based on the initial state provided to useState
+        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
