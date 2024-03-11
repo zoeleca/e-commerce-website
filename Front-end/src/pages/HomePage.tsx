@@ -1,17 +1,37 @@
-import React from 'react';
-import Sidebar from '../components/SideBar';
-import Presentation from '../components/Intro';
-import ProductsList from '../components/ProductsList';
+import React, { useState, useEffect } from "react";
+import Sidebar from "../components/SideBar";
+import Presentation from "../components/Intro";
+import ProductsList from "../components/ProductsList";
+import axios from "axios";
 
 const HomePage: React.FC = () => {
+  // Fetch all products info :
+  const [data, setData] = useState<any>();
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log("fetch request running");
+      try {
+        const response = await axios.get("http://localhost:3000");
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
-  return (<>
-  <Sidebar/>
-  <Presentation/>
-  <ProductsList/>
-
-  </>)
-}
+  return (
+    <>
+      {data && data.length > 0 && (
+        <>
+          <Sidebar ProductData={data} />
+          <Presentation />
+          <ProductsList ProductData={data} />
+        </>
+      )}
+    </>
+  );
+};
 
 export default HomePage;
 
