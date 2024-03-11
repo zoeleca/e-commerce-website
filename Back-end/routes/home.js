@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { getProduct } = require("../dbQueries.js");
+const { getProduct } = require("../dbqueries/getProduct.js");
 
 router.get("/", async (req, res) => {
   // QUOI : Query pour tous les produits disponible à la vente.
