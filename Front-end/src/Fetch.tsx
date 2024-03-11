@@ -1,5 +1,5 @@
 import Layout from "./pages/Layout";
-import Product from "./pages/Product";
+import Product from "./pages/ProductDetail.js";
 import BackOffice from "./pages/BackOffice.jsx";
 
 import { Routes, Route } from "react-router-dom";
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("fetch request function lunched");
+      console.log("fetch request function launched");
       try {
         const response = await axios.get("http://localhost:3000"); // Ici on essaie de faire une requête entre 2 origines différentes.  (CORS headers)
         setData(response.data);
