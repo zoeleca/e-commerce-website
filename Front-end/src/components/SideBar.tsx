@@ -1,51 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Product } from "./interface";
 
 interface SidebarProps {
-  ProductData: Product[]; // Declare the type of ProductData prop as an array of Product objects
+  onFilter: (filters: { color: string; material: string; category: string; subCategory: string }) => void;
+  ProductData: Product[];
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ ProductData }) => {
-  console.log("ProductData inside SideBar component : ", ProductData);
-  const dataToFilter = ProductData;
-  // const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const filter = (color: string, material: string, category: string) => {
-    const newProducts = dataToFilter.filter((product) => {
-      // The filter method creates a new array with all elements that pass the test implemented by the provided function
-      return (
-        // return a boolean that determine whether the current product should be included in the filtered array or not
-        (!color || product.color_name === color) &&
-        (!material || product.material_name === material) &&
-        (!category || product.category_name === category)
-      );
-    });
-    // setFilteredProducts(newProducts);
-    console.log("newProducts as a result :", newProducts);
-    // console.log("filteredProduct as a result :", filteredProducts);
-  };
+const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
+  const [color, setColor] = useState("");
+  const [material, setMaterial] = useState("");
+  const [category, setCategory] = useState("");
+  const [subCategory, setSubCategory] = useState("");
 
-  const getSelection = () => {
-    // Get the selected values
-    let color: string = (document.getElementById("color") as HTMLSelectElement)
-      .value;
-    let material: string = (
-      document.getElementById("materials") as HTMLSelectElement
-    ).value;
-    let category: string = (
-      document.getElementById("categories") as HTMLSelectElement
-    ).value;
-    let subCategory: string = (
-      document.getElementById("sub_categories") as HTMLSelectElement
-    ).value;
-
-    // Control values :
-    console.log("Selected Color:", color);
-    console.log("Selected Materials:", material);
-    console.log("Selected Categories:", category);
-    console.log("Selected Sub-categories:", subCategory);
-
-    // Map over all the products
-    // If their is a match between a product info and an input value, then keep the product.
-    filter(color, material, category);
+  const handleFilter = () => {
+    const filters = { color, material, category, subCategory };
+    onFilter(filters);
   };
 
   return (
@@ -54,7 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ ProductData }) => {
         <div>
           <label htmlFor="color">Couleur</label>
           <br />
-          <select id="color" name="color">
+          <select id="color" name="color" value={color} onChange={(e) => setColor(e.target.value)}>
             <option value=""></option>
             <option value="blanc">Blanc</option>
             <option value="gris">Gris</option>
@@ -70,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ ProductData }) => {
         <div>
           <label htmlFor="materials">Matières</label>
           <br />
-          <select id="materials" name="materials">
+          <select id="materials" name="materials" value={material} onChange={(e) => setMaterial(e.target.value)}>
             <option value=""></option>
             <option value="bois">Bois</option>
             <option value="metal">Metal</option>
@@ -86,7 +55,7 @@ const Sidebar: React.FC<SidebarProps> = ({ ProductData }) => {
         <div>
           <label htmlFor="categories">Catégories</label>
           <br />
-          <select id="categories" name="categories">
+          <select id="categories" name="categories" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value=""></option>
             <option value="salon">Salon</option>
             <option value="chambre">Chambre</option>
@@ -99,7 +68,7 @@ const Sidebar: React.FC<SidebarProps> = ({ ProductData }) => {
         <div>
           <label htmlFor="sub_categories">Sous-catégories</label>
           <br />
-          <select id="sub_categories" name="sub_categories">
+          <select id="sub_categories" name="sub_categories"  value={subCategory} onChange={(e) => setSubCategory(e.target.value)}>
             <option value=""></option>
             <option value="chaise">Chaise</option>
             <option value="table">Table</option>
@@ -109,8 +78,9 @@ const Sidebar: React.FC<SidebarProps> = ({ ProductData }) => {
           </select>
         </div>
         <br />
-        <button onClick={getSelection}>Select</button>
+        <button onClick={handleFilter}>Select</button>
       </aside>
+
     </>
   );
 };

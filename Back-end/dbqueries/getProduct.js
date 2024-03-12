@@ -30,7 +30,9 @@ public.product_materials pm ON p.product_materials = pm.id
 INNER JOIN
 public.product_state ps ON p.product_state = ps.id
 INNER JOIN
-public.product_photos pp ON p.product_photo = pp.id;`;
+public.product_photos pp ON p.product_photo = pp.id
+WHERE
+    ps.state_name = 'En vente';`;
 
 async function getProduct() {
   try {
