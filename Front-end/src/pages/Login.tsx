@@ -4,11 +4,11 @@ const Login: React.FC = () => {
   console.log("helloWorld");
 
   
-    // State to store input values
+    // Etats permettant de stocker des valeurs
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    // Event handler for input change
+    // Gestion d'évènements pour le changement d'état
     const handleUsernameChange = (
       event: React.ChangeEvent<HTMLInputElement>
     ) => {
@@ -21,9 +21,9 @@ const Login: React.FC = () => {
       setPassword(event.target.value);
     };
 
-  // Event handler for form submission
+  // // Gestion d'évènements pour la validation du form
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); // Empêche le comportement par défaut du form
 
       try {
         const response = await fetch("../routes/login", {
@@ -35,14 +35,14 @@ const Login: React.FC = () => {
         });
 
         if (response.ok) {
-          // Successful login, handle accordingly (e.g., redirect user)
-          console.log("Login successful!");
+          
+          console.log("Connexion réussie");
         } else {
-          // Handle unsuccessful login (e.g., display error message)
-          console.error("Login failed:", response.statusText);
+          
+          console.error("La connexion a échoué:", response.statusText);
         }
       } catch (error) {
-        console.error("Error");
+        console.error("Erreur");
       }
     };
 
