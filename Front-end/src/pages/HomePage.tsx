@@ -3,9 +3,9 @@ import Sidebar from "../components/SideBar";
 import Intro from "../components/Intro";
 import ProductsList from "../components/ProductsList";
 import axios from "axios";
-import Card from "../components/Card";
 
 import { Product } from "../components/interface"; 
+import ProductDetail from "../components/ProductDetail";
 
 
 const HomePage: React.FC = () => {
@@ -32,8 +32,7 @@ const HomePage: React.FC = () => {
           <Sidebar ProductData={data} />
           <Intro />
           <ProductsList ProductData={data} />
-          <Card productInfo={data[0]}/>
-          
+          <ProductDetail productInfo={data[0]}/>
         </>
       )}
     </>

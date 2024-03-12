@@ -1,5 +1,5 @@
 import Layout from "./pages/Layout";
-import Product from "./pages/ProductDetail.js";
+import Product from "./components/ProductDetail.js";
 import BackOffice from "./pages/BackOffice.jsx";
 
 import { Routes, Route } from "react-router-dom";
