@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
 
   return (
     <>
-      <aside className="bg-amber-200 p-4 h-screen fixed top-0 left-0">
+      <aside className="absolute bg-white p-4 h-screen top-0 left-0">
         <div>
           <label htmlFor="color">Couleur</label>
           <br />
