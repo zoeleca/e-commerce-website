@@ -6,17 +6,20 @@ import axios from "axios";
 
 import { Product } from "../components/interface"; 
 import ProductDetail from "../components/ProductDetail";
+import Header from "../components/Header";
 
 
 const HomePage: React.FC = () => {
   const [data, setData] = useState<Product[]>([]);
   const [filteredData, setFilteredData] = useState<Product[]>([]);
+  const [noResults, setNoResults] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:3000");
         setData(response.data);
+        console.log(data)
         setFilteredData(response.data); // Initially set filtered data to all data
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -36,31 +39,44 @@ const HomePage: React.FC = () => {
       );
     });
     
-      if(filtered.length > 0){ // Si lr résultat de la recherche filtre est > 0 Alors data = result du filtre
-        setFilteredData(filtered)
-      }else if (filtered.length > 0 && filteredData.length === 0){
-        console.log("Aucun produit ne correspond à votre filtre")
-        setFilteredData(null)
-      } // Ou si la recherche du filtre est > 0 et que result du filtre = 0 Alors "Aucun produit ne correspond à votre filtre"
-      else{setFilteredData(data)}; // Sinon affiché toute la data
-    };
+    if(filtered.length > 0) {
+      setFilteredData(filtered);
+      setNoResults(false);
+    } else {
+      setFilteredData([]);
+      setNoResults(true);
+    }
+  };
 
   return (
     <>
-    {data && data.length > 0 && (
+      {data && data.length > 0 && (
         <>
-      <Sidebar onFilter={handleFilter} ProductData={filteredData}/>
-      <Intro />
-      <ProductsList ProductData={filteredData} />
-      <ProductDetail productInfo={data[0]}/>
-      </>
+          <div className="flex flex-col justify-center items-center">
+            <Intro />
+            <div className="flex flex-row gap">
+              <div className=" top-14 left-0 h-full w-64 bg-white shadow-lg">
+                <Sidebar onFilter={handleFilter} ProductData={filteredData} />
+              </div>
+              <div className="flex flex-col ">
+                {noResults ? (
+                  <h1 className="text-xl font-bold text-center">No result for the filters you chose.</h1>
+                ) : (
+                  <>
+                    <ProductsList ProductData={filteredData} />
+                    {filteredData.length > 0 && <ProductDetail productInfo={filteredData[0]} />}
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </>
       )}
     </>
   );
 };
 
 export default HomePage;
-
 
 
 
