@@ -9,15 +9,15 @@ import ProductDetail from "../components/ProductDetail";
 
 
 const HomePage: React.FC = () => {
-  // Fetch all products info :
-  const [data, setData] = useState<Product[]>(); // Initialize and empty array of Products
+  const [data, setData] = useState<Product[]>([]);
+  const [filteredData, setFilteredData] = useState<Product[]>([]);
+
   useEffect(() => {
     const fetchData = async () => {
-      console.log("fetch request running");
       try {
-        const response = await axios.get("http://localhost:3000"); // Specify the response type as Product[]
-        setData(response.data); // TS will infer the type based on the initial state provided to useState
-        console.log(data);
+        const response = await axios.get("http://localhost:3000");
+        setData(response.data);
+        setFilteredData(response.data); // Initially set filtered data to all data
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -25,21 +25,44 @@ const HomePage: React.FC = () => {
     fetchData();
   }, []);
 
+  const handleFilter = (filters: { color: string; material: string; category: string; subCategory: string }) => {
+    // Filter products based on selected filters
+    const filtered = data.filter(product => {
+      return (
+        (!filters.color || product.color_name === filters.color) &&
+        (!filters.material || product.material_name === filters.material) &&
+        (!filters.category || product.category_name === filters.category) &&
+        (!filters.subCategory || product.sub_category_name === filters.subCategory)
+      );
+    });
+    
+      if(filtered.length > 0){ // Si lr résultat de la recherche filtre est > 0 Alors data = result du filtre
+        setFilteredData(filtered)
+      }else if (filtered.length > 0 && filteredData.length === 0){
+        console.log("Aucun produit ne correspond à votre filtre")
+        setFilteredData(null)
+      } // Ou si la recherche du filtre est > 0 et que result du filtre = 0 Alors "Aucun produit ne correspond à votre filtre"
+      else{setFilteredData(data)}; // Sinon affiché toute la data
+    };
+
   return (
     <>
-      {data && data.length > 0 && (
+    {data && data.length > 0 && (
         <>
-          <Sidebar ProductData={data} />
-          <Intro />
-          <ProductsList ProductData={data} />
-          <ProductDetail productInfo={data[0]}/>
-        </>
+      <Sidebar onFilter={handleFilter} ProductData={filteredData}/>
+      <Intro />
+      <ProductsList ProductData={filteredData} />
+      <ProductDetail productInfo={data[0]}/>
+      </>
       )}
     </>
   );
 };
 
 export default HomePage;
+
+
+
 
 // const HomePage: React.FC = () => {
 //   return (
