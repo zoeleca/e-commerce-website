@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../components/SideBar";
-import Presentation from "../components/Intro";
+import Intro from "../components/Intro";
 import ProductsList from "../components/ProductsList";
 import axios from "axios";
 import Card from "../components/Card";
 
-interface Product {
-  product_id: number;
-  product_name: string;
-  category_name: string;
-  color_name: string;
-  photo_src: string;
-  material_name: string;
-  price: number;
-  product_description: string;
-  state_name: string;
-}
+import { Product } from "../components/interface"; 
+
 
 const HomePage: React.FC = () => {
   // Fetch all products info :
@@ -39,9 +30,10 @@ const HomePage: React.FC = () => {
       {data && data.length > 0 && (
         <>
           <Sidebar ProductData={data} />
-          <Presentation />
+          <Intro />
           <ProductsList ProductData={data} />
           <Card productInfo={data[0]}/>
+          
         </>
       )}
     </>
