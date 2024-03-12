@@ -13,13 +13,13 @@ const ProductList: React.FC<ProductListProps> = ({ ProductData }) => {
     <>
       <div className="border-l border-r p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {ProductData.map((item) => (
-          <div className="border p-4 flex flex-col justify-between transition duration-300 ease-in-out hover:bg-lime-800 hover:bg-opacity-20">
+          <div key={item.product_id} className="border p-4 flex flex-col justify-between transition duration-300 ease-in-out hover:bg-lime-800 hover:bg-opacity-20">
             <div className="flex flex-col">
-              <div className="w-full h-40 mb-2 relative">
+              <div className="w-full h-40 mb-2">
                 <img
                   src={item.photo_src}
                   alt={item.product_name}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex justify-between mb-2 pt-2">
