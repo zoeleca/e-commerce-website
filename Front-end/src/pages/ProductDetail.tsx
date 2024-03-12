@@ -3,7 +3,6 @@ import Gallery from '../components/Gallery';
 import Card from '../components/Card';
 import ProductsList from '../components/ProductsList';
 
-
 const ProductDetail = () => {
   console.log("This is ProductDetail components")
   
