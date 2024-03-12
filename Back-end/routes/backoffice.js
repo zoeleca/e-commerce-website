@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const { boQuery } = require("../dbqueries/boQuery.js");
 
-router.get("/", async (req, res) => {
+router.get("/backoffice", async (req, res) => {
   // QUOI : Query pour tous les produits disponible.
   // QUAND : Dès l'affichage de la page backoffice.
   try {

@@ -1,13 +1,17 @@
-//Importation du module 'pg'
+//Importation du module 'pg' et 'dotenv'
 const { Client } = require("pg");
+const dotenv = require("dotenv");
+
+// lien avec le fichier de config .env à la racine du dossier Back-end
+dotenv.config();
 
 //Creation d'une instance du client PostgreSQL
 const client = new Client({
-  user: "postgres",
-  host: "localhost",
-  database: "Lovechaise",
-  password: "tralala",
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
   connectionTimeoutMillis: 5000,
   idleTimeoutMillis: 3000,
 });
