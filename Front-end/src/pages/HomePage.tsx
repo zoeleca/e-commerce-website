@@ -3,7 +3,10 @@ import Sidebar from "../components/SideBar";
 import Intro from "../components/Intro";
 import ProductsList from "../components/ProductsList";
 import axios from "axios";
-import { Product } from "../components/interface";
+
+import { Product } from "../components/interface"; 
+import ProductDetail from "../components/ProductDetail";
+
 
 const HomePage: React.FC = () => {
   const [data, setData] = useState<Product[]>([]);
@@ -44,9 +47,14 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+    {data && data.length > 0 && (
+        <>
       <Sidebar onFilter={handleFilter} ProductData={filteredData}/>
       <Intro />
       <ProductsList ProductData={filteredData} />
+      <ProductDetail productInfo={data[0]}/>
+      </>
+      )}
     </>
   );
 };
