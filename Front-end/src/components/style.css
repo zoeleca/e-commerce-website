@@ -5,6 +5,11 @@ a {
   all: unset;
 }
 
+.headContainer {
+display : inline-flex;
+flex-direction: row;
+}
+
 .HoverCardContent {
   border-radius: 6px;
   padding: 20px;

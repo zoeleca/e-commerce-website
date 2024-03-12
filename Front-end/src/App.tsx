@@ -8,7 +8,7 @@ import Post from './pages/Post';
 import ProductDetails from './pages/ProductDetail';
 import Profile from './pages/Profile';
 
-import Footer from './components/Footer';
+import Footer from './components/footer';
 import Header from './components/Header';
 
 
@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
+      <Header/>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage/>} />
@@ -28,7 +29,6 @@ function App() {
 
           </Routes>
       </Router>
-      <Header/>
       <Footer/>
     </>
   );
