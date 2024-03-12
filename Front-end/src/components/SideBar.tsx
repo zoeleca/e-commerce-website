@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Product } from "./interface";
 
 interface SidebarProps {
-  className: string; 
   onFilter: (filters: { color: string; material: string; category: string; subCategory: string }) => void;
   ProductData: Product[];
 }

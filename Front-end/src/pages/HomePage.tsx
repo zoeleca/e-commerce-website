@@ -6,7 +6,6 @@ import axios from "axios";
 
 import { Product } from "../components/interface"; 
 import ProductDetail from "../components/ProductDetail";
-import Header from "../components/Header";
 
 
 const HomePage: React.FC = () => {
