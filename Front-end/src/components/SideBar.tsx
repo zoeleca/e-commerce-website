@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Product } from "./interface";
 
 interface SidebarProps {
+  className: string; 
   onFilter: (filters: { color: string; material: string; category: string; subCategory: string }) => void;
   ProductData: Product[];
 }
@@ -19,11 +20,12 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
 
   return (
     <>
-      <aside className="absolute bg-white p-4 h-screen top-0 left-0">
+      <aside className="bg-white p-4">
         <div>
           <label htmlFor="color">Couleur</label>
           <br />
-          <select id="color" name="color" value={color} onChange={(e) => setColor(e.target.value)}>
+          <select className='bg-gray-200' 
+          id="color" name="color" value={color} onChange={(e) => setColor(e.target.value)}>
             <option value=""></option>
             <option value="blanc">Blanc</option>
             <option value="gris">Gris</option>
@@ -39,7 +41,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
         <div>
           <label htmlFor="materials">Matières</label>
           <br />
-          <select id="materials" name="materials" value={material} onChange={(e) => setMaterial(e.target.value)}>
+          <select className='bg-gray-200'
+          id="materials" name="materials" value={material} onChange={(e) => setMaterial(e.target.value)}>
             <option value=""></option>
             <option value="bois">Bois</option>
             <option value="metal">Metal</option>
@@ -55,7 +58,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
         <div>
           <label htmlFor="categories">Catégories</label>
           <br />
-          <select id="categories" name="categories" value={category} onChange={(e) => setCategory(e.target.value)}>
+          <select className='bg-gray-200'
+          id="categories" name="categories" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value=""></option>
             <option value="salon">Salon</option>
             <option value="chambre">Chambre</option>
@@ -68,7 +72,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
         <div>
           <label htmlFor="sub_categories">Sous-catégories</label>
           <br />
-          <select id="sub_categories" name="sub_categories"  value={subCategory} onChange={(e) => setSubCategory(e.target.value)}>
+          <select className='bg-gray-200'
+          id="sub_categories" name="sub_categories"  value={subCategory} onChange={(e) => setSubCategory(e.target.value)}>
             <option value=""></option>
             <option value="chaise">Chaise</option>
             <option value="table">Table</option>
@@ -78,7 +83,9 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilter, ProductData }) => {
           </select>
         </div>
         <br />
-        <button onClick={handleFilter}>Select</button>
+        <button className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-emerald-700 bg-opacity-10
+       transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white  "
+        onClick={handleFilter}>Select</button>
       </aside>
 
     </>
