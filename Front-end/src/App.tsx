@@ -8,7 +8,7 @@ import Post from './pages/Post';
 import ProductDetails from './pages/ProductDetail';
 import Profile from './pages/Profile';
 
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import Header from './components/Header';
 
 
