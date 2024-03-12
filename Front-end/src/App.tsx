@@ -4,9 +4,11 @@ import Login from "./pages/Login";
 import Post from "./pages/Post";
 import Profile from "./pages/Profile";
 
-import Footer from "./components/footer";
-import Header from "./components/Header";
-import ProductDetails from "./components/ProductDetail";
+import Footer from './components/Footer';
+import Header from './components/Header';
+import ProductDetails from './components/ProductDetail';
+
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
