@@ -1,6 +1,11 @@
 import React from "react";
 import Select from "../components/Select";
-import { categoryOptions, subCategoryOptions, colorOptions, materialOptions } from '../utils/CatalogOptions';
+import {
+  categoryOptions,
+  subCategoryOptions,
+  colorOptions,
+  materialOptions,
+} from "../utils/CatalogOptions";
 
 // Interface pour les props
 interface PostFormProps {
@@ -34,7 +39,7 @@ const PostForm: React.FC<PostFormProps> = ({
       {/* champ nom */}
       <div>
         <label
-          htmlFor="itemName"
+          htmlFor="product_name"
           className="block text-sm font-semibold text-gray-700"
         >
           Nom du meuble à vendre
@@ -43,58 +48,62 @@ const PostForm: React.FC<PostFormProps> = ({
           required
           type="text"
           name="product_name"
-          id="itemName"
+          id="product_name"
           value={values.product_name}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
-      {/* champ Catégorie */}
+      {/* select Catégorie */}
       <div>
         <Select
-          id="category"
+          id="category_name"
           name="category_name"
           value={values.category_name}
           onChange={handleChange}
           options={categoryOptions}
-          label="Catégorie"
+          label="Ambiance"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
-      {/* champ Sous-catégorie */}
+      {/* select Sous-catégorie */}
       <div>
         <Select
-          id="subcategory"
+          id="sub_category_name"
           name="sub_category_name"
           value={values.sub_category_name}
           onChange={handleChange}
           options={subCategoryOptions}
-          label="Sous-catégorie"
+          label="Type"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
-      {/* champ Couleur */}
+      {/* select Couleur */}
       <div>
         <Select
-          id="color"
+          id="color_name"
           name="color_name"
           value={values.color_name}
           onChange={handleChange}
           options={colorOptions}
           label="Couleur"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
-      {/* champ Matière */}
+      {/* select Matière */}
       <div>
         <Select
-          id="material"
+          id="material_name"
           name="material_name"
           value={values.material_name}
           onChange={handleChange}
           options={materialOptions}
           label="Matière"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
@@ -113,7 +122,7 @@ const PostForm: React.FC<PostFormProps> = ({
           id="product_description"
           value={values.product_description}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
@@ -132,7 +141,7 @@ const PostForm: React.FC<PostFormProps> = ({
           id="price"
           value={values.price}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out"
+          className="mt-1 block w-full rounded-none border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition duration-150 ease-in-out py-2"
         />
       </div>
 
