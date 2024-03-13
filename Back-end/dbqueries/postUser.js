@@ -1,16 +1,16 @@
 // boQuery.js
 
 // Importe la fonction exécutant les requêtes SQL
-const executeQuery = require("../modules/newProduct.js");
+const executeQuery = require("../modules/dbConfig.js");
 
 // Requêtes SQL :
-const newUser = `INSERT INTO public.\"User\" (name, mail, mot_de_passe) VALUES ('${User_name}','${User_mail}','${User_mdp}')`
+const newUser = `INSERT INTO public.\"user_account\" (user_email, user_password, user_name, user_addres) VALUES ('${User_mail}','${User_password}','${User_name}', '${User_address}')`
 
 // Fonction pour insérer des données dans la base de données
-async function postUser(userData) {
+async function postUser(UserRegistre) {
   try {
     // Exemple de requête d'insertion (remplace avec ta propre logique)
-    await executeQuery(newUser, [userData.name, userData.mail, userData.mdp]);
+    await executeQuery(newUser);
 
     console.log('Données insérées avec succès dans la table "User".');
   } catch (err) {
@@ -22,7 +22,7 @@ async function postUser(userData) {
 // ... Autres fonctions et requêtes ...
 
 module.exports = {
-  getUser,
+  UserRegistre,
   postUser
 };
 
