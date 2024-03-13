@@ -8,8 +8,8 @@ const { boQuery } = require("../dbqueries/boQuery.js");
 // le router doit en premier lieu vérifier si l'utilisateur à le droit d'accès
 // router.use(authenticateToken)
 
-router.get("/backoffice", async (req, res) => {
-  // QUOI : Query pour tous les produits disponible.
+router.get("/", async (req, res) => {
+  // QUOI : Query pour tous les users.
   // QUAND : Dès l'affichage de la page backoffice.
   try {
     const products = await boQuery();
