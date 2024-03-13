@@ -20,9 +20,7 @@ const Gallery: React.FC<GalleryProps> = ({ productInfo }) => {
           className="object-cover w-full h-full"
         />
       </div>
-      <div className="text-center">
-        <h2 className="font-bold text-xl mb-2">{productInfo.product_name}</h2>
-      </div>
+      
     </div>
   );
 };
