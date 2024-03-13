@@ -23,6 +23,10 @@ const mainRouter = require("./routes/home");
 // utilise les routes de home.js sur le chemin "/home"
 app.use("/", mainRouter);
 
+// Importe la route backoffice pour les users
+const officeRouter = require("./routes/backoffice");
+app.use("/backoffice", officeRouter);
+
 // le serveur écoute les connexions entrantes sur le port spécifié dans les var d'env (ou sur 3000)
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
