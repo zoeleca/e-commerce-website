@@ -10,7 +10,7 @@ const Header = () => {
     <HoverCard.Root openDelay={0}>
       <nav className="bg-transparent py-4 px-6 flex items-center justify-between shadow-md">
         <div>
-          <h1 className="text-3xl font-bold">L'Avenir du Passé</h1>
+          <a href="/"><h1 className="text-3xl font-bold">L'Avenir du Passé</h1></a>
         </div>
         <div className="flex items-center space-x-4">
           <HoverCard.Trigger asChild>
@@ -21,13 +21,13 @@ const Header = () => {
               <div>
                 <ul className="bg-white">
                   <a href="/Profile"><li>Mon profil</li></a>
-                  <a href="/Post"><li>Mes ventes</li></a>
+                  <a href="/Calendar"><li>Mes événements</li></a>
                   <a href="/BackOffice"><li>Mon suivi</li></a>
                 </ul>
               </div>
             </HoverCard.Content>
           </HoverCard.Portal>
-          <CardStackPlusIcon className="w-12 h-12" />
+          <a href="/Post"><CardStackPlusIcon className="w-12 h-12" /></a>
           <a href="/"><HomeIcon className="w-12 h-12" /></a>
         </div>
       </nav>
