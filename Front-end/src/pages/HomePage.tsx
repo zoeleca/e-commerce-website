@@ -77,11 +77,11 @@ const HomePage: React.FC = () => {
                 {selectedProduct ? (
                   <>
                   <ProductDetail productInfo={selectedProduct} />
-                  {/* Bonton retour à l'acceuil */}
+                  {/* Bonton retour à l'accueil */}
                   <button className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
                   transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white"
                   onClick={handleHomeClick}>
-                    Acceuil</button>
+                    Accueil</button>
                     </>
                   ) : (
                     <>
