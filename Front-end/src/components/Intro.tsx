@@ -1,5 +1,5 @@
 import React from "react";
-
+import BackgroundImage from '../assets/background-img.jpg'
 const Intro = () => {
 
     console.log("This is Intro components")
@@ -7,6 +7,7 @@ const Intro = () => {
 
     return (
         <>
+        <img src={BackgroundImage} className="w-full auto" alt="Background" />
         <div className="font-helvetica border-t border-b p-20 flex flex-col">
             <h1 className="text-xl font-bold text-center">Bienvenue sur Anciens Meubles pour une Nouvelle Vie</h1>
             <br/>
