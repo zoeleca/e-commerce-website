@@ -41,7 +41,7 @@ const Header = () => {
                       Mon panier
                     </li>
                   </a>
-                  <a href="/">
+                  <a href="">
                     <li className="py-2">Mes ventes</li>
                   </a>
                 </ul>
