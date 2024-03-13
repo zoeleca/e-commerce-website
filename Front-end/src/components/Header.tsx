@@ -3,6 +3,8 @@ import * as HoverCard from "@radix-ui/react-hover-card";
 import { PersonIcon } from "@radix-ui/react-icons";
 import { CardStackPlusIcon } from "@radix-ui/react-icons";
 import { HomeIcon } from "@radix-ui/react-icons";
+import { CalendarIcon } from "@radix-ui/react-icons";
+
 
 const Header = () => {
   console.log("This is a Header component");
@@ -21,14 +23,14 @@ const Header = () => {
               <div>
                 <ul className="bg-white">
                   <a href="/Profile"><li>Mon profil</li></a>
-                  <a href="/Calendar"><li>Mes événements</li></a>
+                  <a href="/Cart"><li>Mon panier</li></a>
                   <a href="/BackOffice"><li>Mon suivi</li></a>
                 </ul>
               </div>
             </HoverCard.Content>
           </HoverCard.Portal>
           <a href="/Post"><CardStackPlusIcon className="w-12 h-12" /></a>
-          <a href="/"><HomeIcon className="w-12 h-12" /></a>
+          <a href="/Events"><CalendarIcon className="w-12 h-12" /></a>
         </div>
       </nav>
     </HoverCard.Root>
