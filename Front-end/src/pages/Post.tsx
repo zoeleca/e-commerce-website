@@ -1,12 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import PostForm from "../components/PostForm";
+import { FormValues } from "../components/PostForm";
 
+// on initialise les valeurs du formulaire
 const Post = () => {
+  const [values, setValues] = useState<FormValues>({
+    product_name: "",
+    category_name: "",
+    sub_category_name: "",
+    material_name: "",
+    color_name: "",
+    product_description: "",
+    price: 0,
+    state_name: "en attente",
+  });
 
-    console.log("helloWorld et post un meuble");
-    return (
-        <PostForm/>
-    )
-}
+  // on crée un gestionnaire d'événement
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    // on extrait name et value de e.target
+    const { name, value } = e.target; // élément de form dont la valeur a été modifiée
+    // on met à jour l'état "values"
+    setValues({
+      // on copie toutes les propriétés existantes de l'objet values dans un nouvel objet
+      ...values,
+      // on met à jour la propriété itemName de l'état values avec la nouvelle valeur entrée par l'utilisateur
+      [name]: value,
+    });
+  };
 
-export default Post
+  // actions lors de la soumission du form
+  const handleSubmit = (e: React.FormEvent) => {
+    // on empêche le rechargement auto
+    e.preventDefault();
+    console.log(values);
+  };
+
+  return (
+    <>
+      <div className="font-helvetica border-t border-b p-20 flex flex-col">
+        <h1 className="text-xl font-bold text-center">
+          Publier une annonce pour vendre un meuble
+        </h1>
+        <br />
+        <p className="text-sm text-center">
+          Chez Anciens Meubles pour une Nouvelle Vie, nous croyons en la beauté
+          intemporelle et en la durabilité des meubles anciens, et nous sommes
+          fiers de vous proposer de donner une seconde vie à vos meubles !
+        </p>
+      </div>
+
+      <PostForm
+        values={values}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </>
+  );
+};
+
+export default Post;
