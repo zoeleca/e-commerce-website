@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const { newProduct } = require("../postProduct.js");
 
-router.get("/products", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Extraction des données du produit de la requête
     const { product_name, price, product_description } = req.body;
