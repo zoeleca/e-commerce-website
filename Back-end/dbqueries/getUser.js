@@ -1,4 +1,4 @@
-// boQuery.js
+// getUser.js
 
 // Importe la fonction executant les requêtes SQL
 const executeQuery = require("../modules/dbConfig.js");
