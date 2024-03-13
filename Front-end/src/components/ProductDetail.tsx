@@ -5,7 +5,7 @@ import { Product } from "../components/interface"; // Assurez-vous d'importer l'
 
 // on définit les types pour les props
 interface DetailProps {
-  productInfo: Product;
+  productInfo: (product: Product) => void;
 }
 
 // on déclare le composant fonctionnel (FC) ProductDetail

@@ -7,8 +7,6 @@ const dotenv = require("dotenv");
 // lien avec le fichier de config .env à la racine du dossier Back-end
 dotenv.config();
 
-console.log(process.env.HAZARD);
-
 const port = process.env.PORT || 3000;
 // crée une instance 'app' de Express
 const app = express();
