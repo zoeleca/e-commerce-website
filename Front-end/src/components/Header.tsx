@@ -4,6 +4,8 @@ import { PersonIcon } from "@radix-ui/react-icons";
 import { CardStackPlusIcon } from "@radix-ui/react-icons";
 import { AvatarIcon } from "@radix-ui/react-icons";
 import { CalendarIcon } from "@radix-ui/react-icons";
+import { TableIcon } from "@radix-ui/react-icons";
+
 
 const Header = () => {
   console.log("This is a Header component");
@@ -39,8 +41,8 @@ const Header = () => {
                       Mon panier
                     </li>
                   </a>
-                  <a href="/BackOffice">
-                    <li className="py-2">Mon suivi</li>
+                  <a href="/">
+                    <li className="py-2">Mes ventes</li>
                   </a>
                 </ul>
               </div>
@@ -51,6 +53,9 @@ const Header = () => {
           </a>
           <a href="/Events">
             <CalendarIcon className="w-12 h-12" />
+          </a>
+          <a href="/BackOffice">
+            <TableIcon className="w-12 h-12" />
           </a>
         </div>
       </nav>
