@@ -4,22 +4,22 @@
 const executeQuery = require("../modules/dbConfig.js");
 
 // Requêtes SQL :
-const allUser = "SELECT * FROM User"
-
+const allUser = "SELECT * FROM user_accounts;";
 
 // Query temporaire de la table "products" pour simuler un fetch depuis la page backoffice.
 // A terme, il faudra query la table "stock".
 async function getUser() {
   try {
-    const User = await executeQuery(allUser);
-    console.log("stock :", User);
-    return User;
+    const user = await executeQuery(allUser);
+    console.log("user :", user);
+    return user;
   } catch (err) {
     console.log("executeQuery failed inside boQuery");
     throw err;
   }
 }
+getUser();
 
 module.exports = {
-  getUser
+  getUser,
 };
