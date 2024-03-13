@@ -1,7 +1,8 @@
-import express from 'express';
-import jwt from 'jsonwebtoken';
-import pool from '../db.js';
-import argon2 from 'argon2';
+const express = require("express");
+const jwt = require("jsonwebtoken")
+const argon2 = require("argon2")
+// import pool from '../db.js';
+import * as argon2 from "argon2";
 import { jwtTokens } from '../utils/jwt-helpers.js';
 
 const router = express.Router();
@@ -16,7 +17,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await bcrypt.compare(password, users.rows[0].user_password);
     if (!validPassword) return res.status(401).json({error: "Incorrect password"});
     //JWT
-    let tokens = jwtTokens(users.rows[0]);//Gets access and refresh tokens
+    let tokens = jwtTokens(users.rows[0]); //Gets access and refresh tokens
     res.cookie('refresh_token', tokens.refreshToken, {...(process.env.COOKIE_DOMAIN && {domain: process.env.COOKIE_DOMAIN}) , httpOnly: true,sameSite: 'none', secure: true});
     res.json(tokens);
   } catch (error) {
