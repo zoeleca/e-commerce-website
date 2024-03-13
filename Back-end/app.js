@@ -26,6 +26,10 @@ const detailRouter = require("./routes/detail");
 // utilise les routes de detail.js sur le chemin "/detail"
 app.use("/detail", detailRouter);
 
+// Importe la route backoffice pour les users
+const officeRouter = require("./routes/backoffice");
+app.use("/backoffice", officeRouter);
+
 // le serveur écoute les connexions entrantes sur le port spécifié dans les var d'env (ou sur 3000)
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
