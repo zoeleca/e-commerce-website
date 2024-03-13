@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   console.log("helloWorld");
 
-  const history = useHistory()
+  const history = useNavigate()
   
     // Etats permettant de stocker des valeurs
     const [username, setUsername] = useState("");
@@ -38,7 +38,7 @@ const Login: React.FC = () => {
 
         if (response.ok) {
             
-          history.push("/homepage")
+          history("/homepage")
           console.log("Connexion réussie");
         } else {
           
