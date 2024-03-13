@@ -23,5 +23,6 @@ modules/dbConfig.js
 *.njsproj
 *.sln
 *.sw?
-modules/dbConfig.js
 .DS_Store
+
+.env
