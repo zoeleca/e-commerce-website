@@ -15,6 +15,14 @@ const ProductDetail: React.FC<DetailProps> = ({ productInfo }) => {
     <div className="flex space-x-4">
       <Gallery productInfo={productInfo} />
       <Card productInfo={productInfo} />
+      <div className="border-t p-5 flex justify-center items-center">
+        <button
+          className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
+       transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white  "
+        >
+          Ajouter au panier
+        </button>
+      </div>
     </div>
   );
 };

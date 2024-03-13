@@ -6,7 +6,6 @@ import { AvatarIcon } from "@radix-ui/react-icons";
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { TableIcon } from "@radix-ui/react-icons";
 
-
 const Header = () => {
   console.log("This is a Header component");
   return (
@@ -48,13 +47,13 @@ const Header = () => {
               </div>
             </HoverCard.Content>
           </HoverCard.Portal>
-          <a href="/Post">
+          <a href="/post">
             <CardStackPlusIcon className="w-12 h-12" />
           </a>
-          <a href="/Events">
+          <a href="/events">
             <CalendarIcon className="w-12 h-12" />
           </a>
-          <a href="/BackOffice">
+          <a href="/backoffice">
             <TableIcon className="w-12 h-12" />
           </a>
         </div>
