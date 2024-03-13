@@ -20,15 +20,15 @@ const Header = () => {
             <HoverCard.Content className="HoverCardContent" sideOffset={5}>
               <div>
                 <ul className="bg-white">
-                  <a href="/Profile"><li>Profil</li></a>
-                  <a href="/Post"><li>Poster</li></a>
-                  <a href="/BackOffice"><li>Backoffice</li></a>
+                  <a href="/Profile"><li>Mon profil</li></a>
+                  <a href="/Post"><li>Mes ventes</li></a>
+                  <a href="/BackOffice"><li>Mon suivi</li></a>
                 </ul>
               </div>
             </HoverCard.Content>
           </HoverCard.Portal>
           <CardStackPlusIcon className="w-12 h-12" />
-          <a href="/Homepage"><HomeIcon className="w-12 h-12" /></a>
+          <a href="/"><HomeIcon className="w-12 h-12" /></a>
         </div>
       </nav>
     </HoverCard.Root>
