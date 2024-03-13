@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <p>Anciens meubles pour une nouvelle vie<br />123 Rue Royale<br />Capital City</p>
         </div>
         <div>
-          <h3 className="mb-4">Numéro de Téléphone</h3>
+          <h3 className="mb-4">Téléphone</h3>
           <p>+33 1 23 45 67 89</p>
         </div>
       </div>
