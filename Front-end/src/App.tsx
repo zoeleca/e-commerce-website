@@ -3,10 +3,13 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
 import Profile from "./pages/Profile";
+import Page404 from "./pages/Page404";
 
 import Footer from "./components/footer";
 import Header from "./components/Header";
 import ProductDetails from "./components/ProductDetail";
+import NotFoundPage from "./components/NotFoundPage";
+
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -22,6 +25,7 @@ function App() {
           <Route path="/post" element={<Post />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/backoffice" element={<BackOffice />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </Router>
       <Footer />

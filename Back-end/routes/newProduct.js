@@ -1,8 +1,8 @@
-//newAdd.js
+//newProduct.js
 
 const express = require("express");
 const router = express.Router();
-const { newProduct } = require("../dbQueries.js");
+const { newProduct } = require("../postProduct.js");
 
 router.get("/products", async (req, res) => {
   try {
