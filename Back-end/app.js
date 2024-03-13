@@ -10,6 +10,7 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 // crée une instance 'app' de Express
 const app = express();
+
 // crée une instance CORS
 const cors = require("cors");
 
@@ -18,13 +19,9 @@ app.use(cors());
 
 // Importe les routes de la page home
 const mainRouter = require("./routes/home");
+
 // utilise les routes de home.js sur le chemin "/home"
 app.use("/", mainRouter);
-
-// Importe les routes de detail
-const detailRouter = require("./routes/detail");
-// utilise les routes de detail.js sur le chemin "/detail"
-app.use("/detail", detailRouter);
 
 // Importe la route backoffice pour les users
 const officeRouter = require("./routes/backoffice");
