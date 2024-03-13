@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Login: React.FC = () => {
   console.log("helloWorld");
 
-  const history = useNavigate()
+  const history = useNavigate();
   
     // Etats permettant de stocker des valeurs
     const [username, setUsername] = useState("");
