@@ -1,13 +1,12 @@
 import React from "react";
+import NotFoundPage from "../components/NotFoundPage";
 
 const Error404 = () => {
 
-    console.log("helloWorld")
+    console.log("helloWorld404")
 
     return (
-        <>
-        <h1>OOPSI !</h1>
-        </>
+        <NotFoundPage />
     )
 }
 
