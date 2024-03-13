@@ -6,14 +6,15 @@ import { Product } from "../components/interface";
 interface ProductListProps {
   className?: string;
   ProductData: Product[]; // `ProductData` prop expects an array of `Product` objects
+  infoProduct: (product: Product) => void; 
 }
 
-const ProductList: React.FC<ProductListProps> = ({ ProductData }) => {
+const ProductList: React.FC<ProductListProps> = ({ ProductData , infoProduct}) => {
   return (
     <>
       <div className="border-l border-r p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {ProductData.map((item) => (
-          <div key={item.product_id} className="border p-4 flex flex-col justify-between transition duration-300 ease-in-out hover:bg-amber-800 hover:bg-opacity-10">
+          <div key={item.product_id} onClick={() => infoProduct(item)} className="border p-4 flex flex-col justify-between transition duration-300 ease-in-out hover:bg-amber-800 hover:bg-opacity-10">
             <div className="flex flex-col">
               <div className="w-full h-40 mb-2">
                 <img

@@ -4,7 +4,7 @@ import Intro from "../components/Intro";
 import ProductsList from "../components/ProductsList";
 import axios from "axios";
 
-import { Product } from "../components/interface"; 
+import { Product } from "../components/interface";
 import ProductDetail from "../components/ProductDetail";
 
 
@@ -12,6 +12,7 @@ const HomePage: React.FC = () => {
   const [data, setData] = useState<Product[]>([]);
   const [filteredData, setFilteredData] = useState<Product[]>([]);
   const [noResults, setNoResults] = useState<boolean>(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +38,8 @@ const HomePage: React.FC = () => {
         (!filters.subCategory || product.sub_category_name === filters.subCategory)
       );
     });
-    
-    if(filtered.length > 0) {
+
+    if (filtered.length > 0) {
       setFilteredData(filtered);
       setNoResults(false);
     } else {
@@ -46,6 +47,11 @@ const HomePage: React.FC = () => {
       setNoResults(true);
     }
   };
+
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+  };
+
 
   return (
     <>
@@ -58,14 +64,19 @@ const HomePage: React.FC = () => {
                 <Sidebar onFilter={handleFilter} ProductData={filteredData} />
               </div>
               <div className="flex flex-col ">
-                {noResults ? (
-                  <h1 className="text-xl font-bold text-center">No result for the filters you chose.</h1>
-                ) : (
-                  <>
-                    <ProductsList ProductData={filteredData} />
-                    {filteredData.length > 0 && <ProductDetail productInfo={filteredData[0]} />}
+                {selectedProduct ? (
+                  <ProductDetail productInfo={selectedProduct} />
+                  ) : (
+                    <>
+                    {noResults ? (
+                      <h1 className="text-xl font-bold text-center">No result for the filters you chose.</h1>
+                      ) : (
+                      <ProductsList ProductData={filteredData} infoProduct={handleProductClick} />
+                    )}
                   </>
+
                 )}
+
               </div>
             </div>
           </div>
