@@ -9,18 +9,21 @@ import ProductDetail from "../components/ProductDetail";
 
 
 const HomePage: React.FC = () => {
+//déclaration de toutes les constantes
   const [data, setData] = useState<Product[]>([]);
   const [filteredData, setFilteredData] = useState<Product[]>([]);
   const [noResults, setNoResults] = useState<boolean>(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  //useEffect pour récuperer de la donnée d'une Api extérieur
   useEffect(() => {
+    // va 'fetch' la data
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:3000");
         setData(response.data);
-        console.log(data)
-        setFilteredData(response.data); // Initially set filtered data to all data
+        //console.log(data)
+        setFilteredData(response.data); // Initialisation des données filtrées avec l'ensemble des données.
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -28,8 +31,8 @@ const HomePage: React.FC = () => {
     fetchData();
   }, []);
 
+  // Fonction qui récupère les filtres choisit par l'utilisateur
   const handleFilter = (filters: { color: string; material: string; category: string; subCategory: string }) => {
-    // Filter products based on selected filters
     const filtered = data.filter(product => {
       return (
         (!filters.color || product.color_name === filters.color) &&
@@ -39,6 +42,7 @@ const HomePage: React.FC = () => {
       );
     });
 
+    //conditions si la réponse est nulle : ne rien afficher
     if (filtered.length > 0) {
       setFilteredData(filtered);
       setNoResults(false);
@@ -48,11 +52,13 @@ const HomePage: React.FC = () => {
     }
   };
 
+  //fonction qui permet d'afficher les détails d'un produit
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
   };
 
-  const handleHomeClick = (product: Product) => {
+  //fonction qui permet de revenir à l'acceuil
+  const handleHomeClick = () => {
     setSelectedProduct(null);
   };
 
@@ -67,9 +73,11 @@ const HomePage: React.FC = () => {
                 <Sidebar onFilter={handleFilter} ProductData={filteredData} />
               </div>
               <div className="flex flex-col ">
+                {/* si le produit à été selectionné renvoyer le détail du produit */}
                 {selectedProduct ? (
                   <>
                   <ProductDetail productInfo={selectedProduct} />
+                  {/* Bonton retour à l'acceuil */}
                   <button className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
                   transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white"
                   onClick={handleHomeClick}>
@@ -77,9 +85,11 @@ const HomePage: React.FC = () => {
                     </>
                   ) : (
                     <>
+                    {/*Retour des données filtrés */}
                     {noResults ? (
                       <h1 className="text-xl font-bold text-center">No result for the filters you chose.</h1>
                       ) : (
+                        /*Retour de toutes les données*/
                       <ProductsList ProductData={filteredData} infoProduct={handleProductClick} />
                     )}
                   </>
