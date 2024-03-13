@@ -26,3 +26,5 @@ modules/dbConfig.js
 .DS_Store
 
 .env
+
+.env
