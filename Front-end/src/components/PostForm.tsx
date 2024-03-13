@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "../components/Select";
+import { categoryOptions, subCategoryOptions, colorOptions, materialOptions } from '../utils/CatalogOptions';
 
 // Interface pour les props
 interface PostFormProps {
@@ -21,45 +22,6 @@ export interface FormValues {
   product_description: string;
   state_name: string;
 }
-
-// on prépare les options pour les sélecteurs
-const categoryOptions = [
-  { value: "salon", label: "Salon" },
-  { value: "chambre", label: "Chambre" },
-  { value: "cuisine", label: "Cuisine" },
-  { value: "salle de bain", label: "Salle de bain" },
-  { value: "salle à manger", label: "Salle à manger" },
-];
-
-const subCategoryOptions = [
-  { value: "chaise", label: "Chaise" },
-  { value: "table", label: "Table" },
-  { value: "canapé", label: "Canapé" },
-  { value: "lit", label: "Lit" },
-  { value: "armoire", label: "Armoire" },
-];
-
-const colorOptions = [
-  { value: "blanc", label: "Blanc" },
-  { value: "gris", label: "Gris" },
-  { value: "noir", label: "Noir" },
-  { value: "jaune", label: "Jaune" },
-  { value: "bleu", label: "Bleu" },
-  { value: "chêne miel", label: "Chêne miel" },
-  { value: "vert sauge", label: "Vert sauge" },
-  { value: "multicolore", label: "Multicolore" },
-];
-
-const materialOptions = [
-  { value: "bois", label: "Bois" },
-  { value: "metal", label: "Métal" },
-  { value: "cuir", label: "Cuir" },
-  { value: "tissu", label: "Tissu" },
-  { value: "verre", label: "Verre" },
-  { value: "plastique", label: "Plastique" },
-  { value: "marbre", label: "Marbre" },
-  { value: "divers", label: "Divers" },
-];
 
 const PostForm: React.FC<PostFormProps> = ({
   values,
