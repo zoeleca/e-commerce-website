@@ -7,9 +7,8 @@ import axios from "axios";
 import { Product } from "../components/interface";
 import ProductDetail from "../components/ProductDetail";
 
-
 const HomePage: React.FC = () => {
-//déclaration de toutes les constantes
+  //déclaration de toutes les constantes
   const [data, setData] = useState<Product[]>([]);
   const [filteredData, setFilteredData] = useState<Product[]>([]);
   const [noResults, setNoResults] = useState<boolean>(false);
@@ -32,13 +31,19 @@ const HomePage: React.FC = () => {
   }, []);
 
   // Fonction qui récupère les filtres choisit par l'utilisateur
-  const handleFilter = (filters: { color: string; material: string; category: string; subCategory: string }) => {
-    const filtered = data.filter(product => {
+  const handleFilter = (filters: {
+    color: string;
+    material: string;
+    category: string;
+    subCategory: string;
+  }) => {
+    const filtered = data.filter((product) => {
       return (
         (!filters.color || product.color_name === filters.color) &&
         (!filters.material || product.material_name === filters.material) &&
         (!filters.category || product.category_name === filters.category) &&
-        (!filters.subCategory || product.sub_category_name === filters.subCategory)
+        (!filters.subCategory ||
+          product.sub_category_name === filters.subCategory)
       );
     });
 
@@ -76,26 +81,34 @@ const HomePage: React.FC = () => {
                 {/* si le produit à été selectionné renvoyer le détail du produit */}
                 {selectedProduct ? (
                   <>
-                  <ProductDetail productInfo={selectedProduct} />
-                  {/* Bonton retour à l'accueil */}
-                  <button className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
+                    <ProductDetail productInfo={selectedProduct} />
+                    {/* Bonton retour à l'accueil */}
+                    <button
+                      className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
                   transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white"
-                  onClick={handleHomeClick}>
-                    Accueil</button>
-                    </>
-                  ) : (
-                    <>
+                      onClick={handleHomeClick}
+                    >
+                      Accueil
+                    </button>
+                  </>
+                ) : (
+                  <>
                     {/*Retour des données filtrés */}
                     {noResults ? (
-                      <h1 className="text-xl font-bold text-center">No result for the filters you chose.</h1>
-                      ) : (
-                        /*Retour de toutes les données*/
-                      <ProductsList ProductData={filteredData} infoProduct={handleProductClick} />
+                      <div className="border border-gray-300 p-5 m-2 flex flex-col justify-between transition duration-300 ease-in-out hover:bg-lime-800 hover:bg-opacity-20">
+                        <h1 className="text-2xl font-bold text-center text-gray-800 my-4">
+                          Aucun résultat pour les filtres sélectionnés.
+                        </h1>
+                      </div>
+                    ) : (
+                      /*Retour de toutes les données*/
+                      <ProductsList
+                        ProductData={filteredData}
+                        infoProduct={handleProductClick}
+                      />
                     )}
                   </>
-
                 )}
-
               </div>
             </div>
           </div>
