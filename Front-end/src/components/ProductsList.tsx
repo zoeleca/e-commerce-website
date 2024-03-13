@@ -2,13 +2,14 @@ import React from "react";
 
 import { Product } from "../components/interface";
 
-// Define the type for the props
+//definir le type pour les props
 interface ProductListProps {
-  className?: string;
-  ProductData: Product[]; // `ProductData` prop expects an array of `Product` objects
-  infoProduct: (product: Product) => void; 
+  className?: string; //propriété pour la personnalisation du style
+  ProductData: Product[];  //Tableau d'objets Product à afficher dans la liste
+  infoProduct: (product: Product) => void; // Fonction pour gérer le clic sur un produit
 }
 
+//Composant fonctionnel pour rendre une liste de produits
 const ProductList: React.FC<ProductListProps> = ({ ProductData , infoProduct}) => {
   return (
     <>
