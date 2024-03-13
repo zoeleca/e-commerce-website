@@ -1,12 +1,11 @@
 import React from "react";
+import PostForm from "../components/PostForm";
 
 const Post = () => {
 
-    console.log("helloWorld");
+    console.log("helloWorld et post un meuble");
     return (
-        <>
-        <h1>Hello</h1>
-        </>
+        <PostForm/>
     )
 }
 
