@@ -52,6 +52,9 @@ const HomePage: React.FC = () => {
     setSelectedProduct(product);
   };
 
+  const handleHomeClick = (product: Product) => {
+    setSelectedProduct(null);
+  };
 
   return (
     <>
@@ -65,7 +68,13 @@ const HomePage: React.FC = () => {
               </div>
               <div className="flex flex-col ">
                 {selectedProduct ? (
+                  <>
                   <ProductDetail productInfo={selectedProduct} />
+                  <button className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
+                  transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white"
+                  onClick={handleHomeClick}>
+                    Acceuil</button>
+                    </>
                   ) : (
                     <>
                     {noResults ? (
