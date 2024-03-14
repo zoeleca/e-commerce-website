@@ -17,11 +17,18 @@ const cors = require("cors");
 // Ici : autorise toutes les origines de requête (= domaines différents)
 app.use(cors());
 
+// on parse le corps des requetes JSON
+app.use(express.json());
+
 // Importe les routes de la page home
 const mainRouter = require("./routes/home");
 
 // utilise les routes de home.js sur le chemin "/home"
 app.use("/", mainRouter);
+
+// Importe la route newProduct sur le chemin /post
+const postRouter = require("./routes/newProduct");
+app.use("/post", postRouter);
 
 // Importe la route backoffice pour les users
 const officeRouter = require("./routes/backoffice");

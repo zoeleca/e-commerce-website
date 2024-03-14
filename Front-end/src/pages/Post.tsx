@@ -6,13 +6,13 @@ import { FormValues } from "../components/PostForm";
 const Post = () => {
   const [values, setValues] = useState<FormValues>({
     product_name: "",
-    category_name: "",
-    sub_category_name: "",
-    material_name: "",
-    color_name: "",
+    product_category: "",
+    sub_category: "",
+    product_materials: "",
+    product_color: "",
     product_description: "",
     price: 0,
-    state_name: "en attente",
+    product_state: "en attente",
   });
 
   // on crée un gestionnaire d'événement
@@ -31,10 +31,24 @@ const Post = () => {
   };
 
   // actions lors de la soumission du form
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     // on empêche le rechargement auto
     e.preventDefault();
-    console.log(values);
+    // Appel à l'API pour ajouter l'annonce
+    try {
+      const response = await fetch('http://localhost:3000/post', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du formulaire:", error);
+    }
   };
 
   return (
