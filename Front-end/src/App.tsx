@@ -23,7 +23,6 @@ function App() {
           <Route path="/products" element={<ProductDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/post" element={<Post />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/backoffice" element={<BackOffice />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
