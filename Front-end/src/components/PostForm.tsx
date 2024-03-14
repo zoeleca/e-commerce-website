@@ -19,13 +19,13 @@ interface PostFormProps {
 // Définition du type des valeurs du formulaire
 export interface FormValues {
   product_name: string;
-  category_name: string;
-  sub_category_name: string;
-  color_name: string;
-  material_name: string;
+  product_category: string;
+  sub_category: string;
+  product_color: string;
+  product_materials: string;
   price: number;
   product_description: string;
-  state_name: string;
+  product_state: string;
 }
 
 const PostForm: React.FC<PostFormProps> = ({
@@ -58,9 +58,9 @@ const PostForm: React.FC<PostFormProps> = ({
       {/* select Catégorie */}
       <div>
         <Select
-          id="category_name"
-          name="category_name"
-          value={values.category_name}
+          id="product_category"
+          name="product_category"
+          value={values.product_category}
           onChange={handleChange}
           options={categoryOptions}
           label="Ambiance"
@@ -71,9 +71,9 @@ const PostForm: React.FC<PostFormProps> = ({
       {/* select Sous-catégorie */}
       <div>
         <Select
-          id="sub_category_name"
-          name="sub_category_name"
-          value={values.sub_category_name}
+          id="sub_category"
+          name="sub_category"
+          value={values.sub_category}
           onChange={handleChange}
           options={subCategoryOptions}
           label="Type"
@@ -84,9 +84,9 @@ const PostForm: React.FC<PostFormProps> = ({
       {/* select Couleur */}
       <div>
         <Select
-          id="color_name"
-          name="color_name"
-          value={values.color_name}
+          id="product_color"
+          name="product_color"
+          value={values.product_color}
           onChange={handleChange}
           options={colorOptions}
           label="Couleur"
@@ -97,9 +97,9 @@ const PostForm: React.FC<PostFormProps> = ({
       {/* select Matière */}
       <div>
         <Select
-          id="material_name"
-          name="material_name"
-          value={values.material_name}
+          id="product_materials"
+          name="product_materials"
+          value={values.product_materials}
           onChange={handleChange}
           options={materialOptions}
           label="Matière"
