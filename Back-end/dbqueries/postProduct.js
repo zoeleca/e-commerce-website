@@ -40,7 +40,7 @@ async function postProduct(data) {
       data.sub_category,
       data.product_description,
       2,
-      1,
+      3,
     ];
     console.log('values :', values);
     const result = await executePostQuery(insertQuery, values);
