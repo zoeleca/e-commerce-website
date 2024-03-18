@@ -9,7 +9,7 @@ const authenticateToken = (req, res, next) => {
     if (!token) {
       return res.status(401).json({ error: 'Non authentifié' });
     }
-    const decoded = jwt.verify(token, process.envACCESS_TOKEN_SECRET);
+    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     req.user = decoded;
     if (req.user && req.user.role === 'superuser') {
       // Si oui, autoriser l'accès au prochain middleware ou à la route
