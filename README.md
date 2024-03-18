@@ -53,6 +53,12 @@ POUR UTILISER CE SCRIPT .SQL :
 ```
 
 #### - Front end
+Se placer dans le dossier `/Front-end` :
+
+- Installer/mettre à jour les dépendances de Node : `npm install`
+- Lancer `npm run dev` (si vous êtes en environnement de dev)
+  OU
+- Lancer `npm run start` (si vous êtes en environnement de production)
 
 
 ## Running the tests
@@ -97,7 +103,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Auteur·es
 
 * **Morgane Le Moal** - [GitHub](https://github.com/M0nline) - [LinkedIn](https://www.linkedin.com/in/morganelemoal/)
-
+* ** Tijana LAPORTE MITROVIC** - [GitHub](https://github.com/Tiki102) - [LinkedIn](https://www.linkedin.com/in/tijana-laporte-mitrovic-b13859152/)
 
 
 ## License
