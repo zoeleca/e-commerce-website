@@ -1,4 +1,4 @@
-// page en cours de contruction
+// [WIP] auth-routes.js
 
 const express = require("express");
 const jwt = require("jsonwebtoken")
