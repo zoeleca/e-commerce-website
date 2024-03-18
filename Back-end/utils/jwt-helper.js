@@ -1,3 +1,5 @@
+// [WIP] authorization
+
 import jwt from 'jsonwebtoken';
 
 // générer un token d'accès et de rafraichissment pour un user unique
