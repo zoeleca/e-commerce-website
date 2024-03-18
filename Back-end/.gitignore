@@ -25,6 +25,4 @@ modules/dbConfig.js
 *.sw?
 .DS_Store
 
-.env
-
-.env
+Back-end/.env
