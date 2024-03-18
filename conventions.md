@@ -12,3 +12,5 @@
 - react : fonctions avec majuscule au Nom si un mot / si plusieurs mots, camelCase
 
 ## Back
+
+- camelCase

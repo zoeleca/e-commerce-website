@@ -41,7 +41,7 @@ const Header = () => {
                     </li>
                   </a>
                   <a href="">
-                    <li className="py-2">Mes ventes</li>
+                    <li className="py-2">Mes annonces</li>
                   </a>
                 </ul>
               </div>
