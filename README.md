@@ -1,6 +1,33 @@
 # Ada Love Chaise (school project)
 Le projet consiste, pour deux équipes back-end et front-end, à créer une plateforme de vente de meubles d'occasion.
 
+## Features attendues
+
+### Abouties
+* connexion back / front / DB (API)
+* DB relationnelle (PostgreSQL)
+* documentation (code + SQL) 
+* nomenclature commune
+* page 404
+* catalogue complet annonces
+* filtres d'affichage annonces
+* détail annonce
+* pages : home / login / post / backoffice
+
+
+### WIP
+
+* backoffice : features valider / supprimer annonce
+* login : script de connexion / sécurisation mdp (hash) / session (token)
+* register : form + interrogation DB / inscription DB
+
+### Backlog
+
+* pages mon profil / mon panier / mes annonces
+* gestion d'un calendrier d'événements
+* environnement de test
+* déploiement
+
 ## Bien démarrer
 
 Ces instructions vous permettront d'obtenir une copie du projet en fonctionnement sur votre machine locale pour le développement et les tests. 
