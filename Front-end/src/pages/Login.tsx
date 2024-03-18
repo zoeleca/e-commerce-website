@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
-
   const history = useNavigate();
 
   // Etats permettant de stocker des valeurs
@@ -10,7 +9,9 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
 
   // Gestion d'évènements pour le changement d'état
-  const handleUserEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleUserEmailChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setUserEmail(event.target.value);
   };
 
@@ -44,49 +45,56 @@ const Login: React.FC = () => {
 
   return (
     <>
-  <h1 className="text-xl font-bold text-center mt-8 mb-6">
-    Connecte-toi à toi-même et rencontre Dieu (qui est une femme hamster, CHEH !)
-  </h1>
-  <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8 mb-8">
-    <fieldset className="mb-6">
-      <label className="block text-lg font-medium text-gray-700 mb-2" htmlFor="userEmail">
-        Email :
-      </label>
-      <input
-        className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-        required
-        id="userEmail"
-        placeholder="jean-beignet@email.com"
-        value={userEmail}
-        onChange={handleUserEmailChange}
-      />
-    </fieldset>
-    <fieldset className="mb-6">
-      <label className="block text-lg font-medium text-gray-700 mb-2" htmlFor="password">
-        Mot de Passe :
-      </label>
-      <input
-        className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-        required
-        id="password"
-        type="password"
-        placeholder="********"
-        value={password}
-        onChange={handlePasswordChange}
-      />
-    </fieldset>
-    <button
-      type="submit"
-      className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
+      <h1 className="text-xl font-bold text-center mt-8 mb-6">Connecte-toi</h1>
+      <h2 className="text- font-medium text-center text-gray-600">
+        ...à toi-même, et rencontre Dieu, qui est une femme hamster, CHEH !
+      </h2>
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8 mb-8"
+      >
+        <fieldset className="mb-6">
+          <label
+            className="block text-lg font-medium text-gray-700 mb-2"
+            htmlFor="userEmail"
+          >
+            Email :
+          </label>
+          <input
+            className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            required
+            id="userEmail"
+            placeholder="jean-beignet@email.com"
+            value={userEmail}
+            onChange={handleUserEmailChange}
+          />
+        </fieldset>
+        <fieldset className="mb-6">
+          <label
+            className="block text-lg font-medium text-gray-700 mb-2"
+            htmlFor="password"
+          >
+            Mot de Passe :
+          </label>
+          <input
+            className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            required
+            id="password"
+            type="password"
+            placeholder="********"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </fieldset>
+        <button
+          type="submit"
+          className="font-helvetica border border-solid border-gray-400 rounded-lg p-2 bg-amber-800 bg-opacity-10
       transition duration-300 ease-in-out hover:bg-red-800 hover:bg-opacity-80 hover:text-white"
-    >
-      Me connecter
-    </button>
-  </form>
-</>
-
-
-
+        >
+          Me connecter
+        </button>
+      </form>
+    </>
   );
 };
 
