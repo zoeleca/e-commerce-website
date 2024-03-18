@@ -60,6 +60,9 @@ Se placer dans le dossier `/Front-end` :
   OU
 - Lancer `npm run start` (si vous êtes en environnement de production)
 
+### Deploiement
+(tbc)
+
 ## Conçu avec
 
 * [Express](https://expressjs.com/) pour Node.js
