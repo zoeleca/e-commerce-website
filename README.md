@@ -53,61 +53,39 @@ POUR UTILISER CE SCRIPT .SQL :
 ```
 
 #### - Front end
+Se placer dans le dossier `/Front-end` :
 
+- Installer/mettre à jour les dépendances de Node : `npm install`
+- Lancer `npm run dev` (si vous êtes en environnement de dev)
+  OU
+- Lancer `npm run start` (si vous êtes en environnement de production)
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+### Deploiement
+(tbc)
 
 ## Conçu avec
 
-* [React](https://react.dev/) 
 * [Express](https://expressjs.com/) pour Node.js
 * [PostgreSQL](https://www.postgresql.org/)
+* [pgAdmin](https://www.pgadmin.org/)
+* [Postman](https://www.postman.com/)
+* [React](https://react.dev/)
+* [Typescript](https://www.typescriptlang.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
+* [GitHub](https://github.com/)
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Repository
+## Repository (origine)
 
 [Ada tech School GitHub](https://github.com/adatechschool/projet-plateforme-de-vente-de-meubles-adalovechaises)
 
 ## Auteur·es
 
-* **Morgane Le Moal** - [GitHub](https://github.com/M0nline) - [LinkedIn](https://www.linkedin.com/in/morganelemoal/)
+* **Clément Coadou**
+* **Guillaume Depecker**
+* **Marion Ochem**
+* **Morgane Le MoaL** - [GitHub](https://github.com/M0nline) - [LinkedIn](https://www.linkedin.com/in/morganelemoal/)
+* **Philippe Deslous-Paoli**
+* **Tijana Laporte-Mitrovic** - [GitHub](https://github.com/Tiki102) - [LinkedIn](https://www.linkedin.com/in/tijana-laporte-mitrovic-b13859152/)
+* **Zoé Lecaille**
 
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
-
+Avec le soutien de Sofiane Khireddine et des encadrant·es d'Ada Tech School.
