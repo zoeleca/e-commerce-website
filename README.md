@@ -1,98 +1,89 @@
-# Ada Love Chaise (school project)
-Le projet consiste, pour deux équipes back-end et front-end, à créer une plateforme de vente de meubles d'occasion.
+# Ada Love Chaise (a School Project)
+Ada Loce Chaise is a responsive a second-hand furnitures e-commerce website that anwser the need of a client that want to have a website were people can post their products, and were the admin can valid or not the selling of a product.
+Two teams were created : Front Team (3), Back Team (4)
 
-## Features attendues
+## Features Expected
 
-### Abouties
-* connexion back / front / DB (API)
-* DB relationnelle (PostgreSQL)
-* documentation (code + SQL) 
-* nomenclature commune
-* page 404
-* catalogue complet annonces
-* filtres d'affichage annonces
-* détail annonce
-* pages : home / login / post / backoffice
+### Achievement
+* connection Back / Front => DB (API)
+* Relational DB (PostgreSQL)
+* Documentation (Code + SQL) 
+* Clean code
+* 404 Page
+* Complete products Pages
+* Product Display Filters
+* Product Details
+* Pages : Home / Login / Post / Backoffice
 
 
 ### WIP
 
-* backoffice : features valider / supprimer annonce
-* login : script de connexion / sécurisation mdp (hash) / session (token)
-* register : form + interrogation DB / inscription DB
+* Backoffice : feature :  validate / remove a post
+* Login : Connection Script/ PW Hashed / Session Token
+* Register : Form + DB Query / Table in DB
 
 ### Backlog
 
-* pages mon profil / mon panier / mes annonces
-* gestion d'un calendrier d'événements
-* environnement de test
-* déploiement
+* Pages : Profile / Cart / My posts
+* Management of an Event Calendar
+* Test environment
+* Deployment
 
-## Bien démarrer
+## How to use the project
 
-Ces instructions vous permettront d'obtenir une copie du projet en fonctionnement sur votre machine locale pour le développement et les tests. 
+These instructions will enable you to get a copy of the project up and running on your local machine for development and testing purposes.
+Please refer to the deployment section for notes on how to deploy the project on a production system.
 
-Consultez la section déploiement pour des notes sur comment déployer le projet sur un système en production.
-
-### Pré-requis
-
-Ce dont vous avez besoin pour installer le logiciel :
-
-- un IDE
-- un shell
-- Node.js (vérifier qu'il est installé en tapant $`node -v`)
-- npm (verifier qu'il est installé en tapant $`npm -v` )
-- un navigateur
-
-
-### Installation / lancement
+### Installation 
 
 #### - Back end
 
-Se placer dans le dossier `/Back-end` :
+Navigate to the `/Back-end` directory:
 
-- Installer/mettre à jour les dépendances de Node : `npm install`
-- Lancer `npm run dev` (si vous êtes en environnement de dev)
-  OU
-- Lancer `npm run start` (si vous êtes en environnement de production)
+Install/update Node dependencies: npm install
+Run `npm run dev` (if you're in a development environment)
+OR
+Run `npm run start` (if you're in a production environment)
 
 #### - DataBase
 
-- Installer [PostgreSQL](https://www.postgresql.org/)
-- Installer [pgAdmin4](https://www.pgadmin.org/) (minimum)
-- Suivre les instructions contenues dans le script :   `tables_db_lovechaise.sql`
+- Install PostgreSQL : [PostgreSQL](https://www.postgresql.org/)
+- Install pgAdmin4 [pgAdmin4](https://www.pgadmin.org/) (minimum)
+- Follow the instructions in the script: `tables_db_lovechaise.sql`
 
 ```
-POUR UTILISER CE SCRIPT .SQL :
-1. Télécharger PostgreSQL (au moins pgAdmin 4)
-2. Executer le fichier d'installation et enregistrer le mot de passe "postgres" pour l'user par default "postgres"
-3. Ouvrir pgAdmin
-4. Ouvrir le dossier "Server"
-5. Insérer le mot de passe "postgres" dans le prompt
-6. Cliquer droit sur "Database" > Create > Database
-7. Nommer la db "Lovechaise" + save
-8. Cliquer droit sur la DB Lovechaise
-9. Cliquer sur "Query Tool"
-10. Cliquer sur le bouton "open file" (icône "dossier")
-11. Sélectionner et importer le fichier tables_db_lovechaise.sql
-12. Cliquer sur le bouton "Execute Script" (icône "play")
-13. Si besoin de tester des queries : repartir de l'étape 8 
+Step by Step guide to use SQL Script:
+
+1. Download PostgreSQL (at least pgAdmin 4).
+2. Run the installation file and set the password "postgres" for the default user "postgres".
+3. Open pgAdmin.
+4. Open the "Server" folder.
+5. Enter the password "postgres" in the prompt.
+6. Right-click on "Database" > Create > Database.
+7. Name the database "Lovechaise" and save.
+8. Right-click on the "Lovechaise" database.
+9. Click on "Query Tool".
+10. Click on the "open file" button (folder icon).
+11. Select and import the file tables_db_lovechaise.sql.
+12. Click on the "Execute Script" button (play icon).
+13. If you need to test queries, repeat from step 8.
 ```
 
 #### - Front end
-Se placer dans le dossier `/Front-end` :
 
-- Installer/mettre à jour les dépendances de Node : `npm install`
-- Lancer `npm run dev` (si vous êtes en environnement de dev)
-  OU
-- Lancer `npm run start` (si vous êtes en environnement de production)
+Navigate to the `/Front-end`  directory:
 
-### Deploiement
-(tbc)
+- Install/update Node dependencies: npm install
+- Run `npm run dev` (if you're in a development environment)
+OR
+- Run `npm run start` (if you're in a production environment)ù
 
-## Conçu avec
+### Deployment
+(TBC)
 
-* [Express](https://expressjs.com/) pour Node.js
+## Libraries, Frameworks & Tools Used
+
+* [Express](https://expressjs.com/) with Node.js
 * [PostgreSQL](https://www.postgresql.org/)
 * [pgAdmin](https://www.pgadmin.org/)
 * [Postman](https://www.postman.com/)
@@ -101,18 +92,16 @@ Se placer dans le dossier `/Front-end` :
 * [Tailwind CSS](https://tailwindcss.com/)
 * [GitHub](https://github.com/)
 
-## Repository (origine)
-
+## Repository (origin)
+<em>French Version</em>
 [Ada tech School GitHub](https://github.com/adatechschool/projet-plateforme-de-vente-de-meubles-adalovechaises)
 
-## Auteur·es
+## Contributors
 
+* **Zoé Lecaille**
 * **Clément Coadou**
-* **Guillaume Depecker**
-* **Marion Ochem**
+* **Marion Ochem** 
 * **Morgane Le MoaL** - [GitHub](https://github.com/M0nline) - [LinkedIn](https://www.linkedin.com/in/morganelemoal/)
 * **Philippe Deslous-Paoli**
+* **Guillaume Depecker**
 * **Tijana Laporte-Mitrovic** - [GitHub](https://github.com/Tiki102) - [LinkedIn](https://www.linkedin.com/in/tijana-laporte-mitrovic-b13859152/)
-* **Zoé Lecaille**
-
-Avec le soutien de Sofiane Khireddine et des encadrant·es d'Ada Tech School.
