@@ -1,6 +1,8 @@
 # Ada Love Chaise (a School Project)
 Ada Loce Chaise is a responsive a second-hand furnitures e-commerce website that anwser the need of a client that want to have a website were people can post their products, and were the admin can valid or not the selling of a product.
 Two teams were created : Front Team (3), Back Team (4)
+<br>
+Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.vercel.app/)
 
 ## Features Expected
 
