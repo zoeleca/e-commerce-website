@@ -1,16 +1,17 @@
 # Ada Love Chaise (a School Project)
-Ada Loce Chaise is a responsive a second-hand furnitures e-commerce website that anwser the need of a client that want to have a website were people can post their products, and were the admin can valid or not the selling of a product.
-Two teams were created : Front Team (3), Back Team (4)
+Ada Love Chaise is a responsive a second-hand furnitures e-commerce website that anwser the need of a client that want to have a website where people can post their products, and where the admin can valid or not the selling of a product.
+<br>
+Two teams were created : Front Team (3) and Back Team (4)
+<br>
 <br>
 Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.vercel.app/)
+<br>
 
 ## Features Expected
-
 ### Achievement
-* connection Back / Front => DB (API)
+* Back / Front Connection=> DB (API)
 * Relational DB (PostgreSQL)
 * Documentation (Code + SQL) 
-* Clean code
 * 404 Page
 * Complete products Pages
 * Product Display Filters
@@ -21,6 +22,7 @@ Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.ver
 ### WIP
 
 * Backoffice : feature :  validate / remove a post
+* Clean code : refacto, separations of concerns
 * Login : Connection Script/ PW Hashed / Session Token
 * Register : Form + DB Query / Table in DB
 
@@ -28,10 +30,10 @@ Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.ver
 
 * Pages : Profile / Cart / My posts
 * Management of an Event Calendar
-* Test environment
-* Deployment
+* Tests 2e2 + UT
+* Finished website - Deployment
 
-## How to use the project
+## Project's Installation
 
 These instructions will enable you to get a copy of the project up and running on your local machine for development and testing purposes.
 Please refer to the deployment section for notes on how to deploy the project on a production system.
@@ -78,10 +80,13 @@ Navigate to the `/Front-end`  directory:
 - Install/update Node dependencies: npm install
 - Run `npm run dev` (if you're in a development environment)
 OR
-- Run `npm run start` (if you're in a production environment)ù
+- Run `npm run start` (if you're in a production environment)
 
-### Deployment
-(TBC)
+  <br>
+## Repository (origin)
+<em>French Version</em>
+[Ada tech School GitHub](https://github.com/adatechschool/projet-plateforme-de-vente-de-meubles-adalovechaises)
+
 
 ## Libraries, Frameworks & Tools Used
 
@@ -93,10 +98,6 @@ OR
 * [Typescript](https://www.typescriptlang.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [GitHub](https://github.com/)
-
-## Repository (origin)
-<em>French Version</em>
-[Ada tech School GitHub](https://github.com/adatechschool/projet-plateforme-de-vente-de-meubles-adalovechaises)
 
 ## Contributors
 
