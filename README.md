@@ -6,6 +6,11 @@ Two teams were created : Front Team (3) and Back Team (4)
 <br>
 Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.vercel.app/)
 <br>
+<br>
+![image](https://github.com/zoeleca/e-commerce-website/assets/146814463/b82954ce-5d18-4254-a335-9ef70c8b3e19)
+
+
+<br>
 
 ## Features Expected
 ### Achievement
