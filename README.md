@@ -24,19 +24,23 @@ Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.ver
 * Pages : Home / Login / Post / Backoffice
 
 
+
+
 ### WIP
 
+* Tests 2e2 + component
 * Backoffice : feature :  validate / remove a post
 * Clean code : refacto, separations of concerns
 * Login : Connection Script/ PW Hashed / Session Token
 * Register : Form + DB Query / Table in DB
+* Deployment for Demo
 
 ### Backlog
 
 * Pages : Profile / Cart / My posts
 * Management of an Event Calendar
-* Tests 2e2 + UT
 * Finished website - Deployment
+
 
 ## Project's Installation
 
