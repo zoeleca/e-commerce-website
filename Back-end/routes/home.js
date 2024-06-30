@@ -3,7 +3,6 @@
 const express = require("express");
 const router = express.Router();
 const { getProduct } = require("../dbqueries/getProduct.js");
-
 router.get("/", async (req, res) => {
   // QUOI : Query pour tous les produits disponible à la vente.
   // QUAND : Dès l'affichage de la page d’accueil.
@@ -16,5 +15,4 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-
 module.exports = router;

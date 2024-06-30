@@ -1,10 +1,11 @@
 {
   "name": "back-end",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "vitest --ui --project e2e",
+    "test:component": "vitest --ui --project component",
+    "test:all": "vitest --ui",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -12,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/react-router-dom": "^5.3.3",    "bcryptjs": "^2.4.3",
+    "@types/react-router-dom": "^5.3.3",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
@@ -21,6 +23,12 @@
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
-  }
+    "@vitest/coverage-istanbul": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0",
+    "vitest": "^1.6.0"
+  },
+  "description": ""
 }

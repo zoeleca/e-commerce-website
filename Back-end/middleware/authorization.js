@@ -1,24 +1,20 @@
 // [WIP]authorization.js
 
-import jwt from 'jsonwebtoken';
-
+import jwt from "jsonwebtoken";
 
 const authenticateToken = (req, res, next) => {
-  try {
-    const token = req.headers.authorization.split(' ')[1];
-    if (!token) {
-      return res.status(401).json({ error: 'Non authentifié' });
-    }
-    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    req.user = decoded;
-    if (req.user && req.user.role === 'superuser') {
-      // Si oui, autoriser l'accès au prochain middleware ou à la route
-      return next();
-      }
-  } catch
-
-
-
+  // try {
+  const token = req.headers.authorization.split(" ")[1];
+  if (!token) {
+    return res.status(401).json({ error: "Non authentifié" });
+  }
+  const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+  req.user = decoded;
+  if (req.user && req.user.role === "superuser") {
+    // Si oui, autoriser l'accès au prochain middleware ou à la route
+    return next();
+  }
+  // } catch
 
   // const authHeader = req.headers['authorization'];
 
@@ -29,12 +25,11 @@ const authenticateToken = (req, res, next) => {
   // jwt.verify(token, ACCESS_TOKEN_SECRET, (error, user) => {
   //   if (error) return res.status(403).json({error : error.message});
   //   req.user = user;
-  //   next(); 
+  //   next();
   // });
-}
+};
 
-export {authenticateToken};
-
+export { authenticateToken };
 
 // // middleware/authenticateToken.js
 // const jwt = require('jsonwebtoken');
@@ -44,7 +39,7 @@ export {authenticateToken};
 //   try {
 //     // 1. Vérifier si le jeton est fourni dans l'en-tête Authorization
 //     const token = req.headers.authorization.split(' ')[1];
-    
+
 //     if (!token) {
 //       // Si le jeton n'est pas fourni, renvoyer une erreur non authentifiée
 //       return res.status(401).json({ error: 'Non authentifié' });
@@ -52,7 +47,7 @@ export {authenticateToken};
 
 //     // 2. Vérifier si le jeton est valide
 //     const decoded = jwt.verify(token, ACCESS_TOKEN_SECRET);
-    
+
 //     // 3. Ajouter les informations utilisateur décodées à la demande pour une utilisation ultérieure
 //     req.user = decoded;
 
