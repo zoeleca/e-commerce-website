@@ -28,7 +28,7 @@ Here is the demo : [https://adalovechaise.vercel.app/](https://adalovechaise.ver
 
 ### WIP
 
-* Tests 2e2 + component
+* Tests 2e2 + component in new branch
 * Backoffice : feature :  validate / remove a post
 * Clean code : refacto, separations of concerns
 * Login : Connection Script/ PW Hashed / Session Token
